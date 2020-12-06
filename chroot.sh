@@ -407,10 +407,10 @@ rm -r /usr/share/icons
 rm -r /usr/share/sddm
 
 cd /home/$username/system/
-cp -r etc root /
-cp -a icons /usr/share
-cp -a sddm /usr/share
-cp -r FullRepresentation.qml /usr/share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui
+rsync -r -t -v --progress -l -s  etc root /
+rsync -r -t -v --progress -l -s icons /usr/share
+rsync -r -t -v --progress -l -s sddm /usr/share
+rsync -r -t -v --progress -l -s FullRepresentation.qml /usr/share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui
 
 fi
 clear
