@@ -260,7 +260,7 @@ pacman -S lib32-libxinerama lib32-libxrandr lib32-openal lib32-openssl-1.0 lib32
 
 pacman -S mupdf-tools nano-syntax-highlighting neofetch noto-fonts-emoji opendesktop-fonts --noconfirm
 
-pacman -S pamac-aur perl-image-exiftool partitionmanager pcmanfm pkgfile p7zip --noconfirm
+pacman -S pamac-aur perl-image-exiftool partitionmanager pcmanfm pkgfile p7zip pulseaudio-alsa --noconfirm
 
 pacman -S pipewire-pulse python-pip qbittorrent qt5-xmlpatterns reflector systemd-kcm sddm-kcm smplayer --noconfirm
 
