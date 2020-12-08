@@ -269,7 +269,8 @@ pacman -S smplayer-themes sox spectacle telegram-desktop terminus-font terminus-
 pacman -S ttf-arphic-ukai ttf-arphic-uming ttf-caladea ttf-carlito ttf-croscore ttf-dejavu ttf-inconsolata --noconfirm
 
 pacman -S ttf-liberation ttf-opensans ttf-sazanami unrar xclip xorg-xrandr xreader zim yay youtube-dl --noconfirm
-#pacman -S  --noconfirm
+
+pacman -S pipewire-pulse
 
 
 pacman -Rns bluedevil plasma-thunderbolt bolt --noconfirm
