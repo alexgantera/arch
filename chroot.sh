@@ -272,7 +272,7 @@ pacman -S ttf-liberation ttf-opensans ttf-sazanami unrar xclip xorg-xrandr xread
 #pacman -S  --noconfirm
 
 
-pacman -Rns bluedevil discover plasma-thunderbolt bolt --noconfirm
+pacman -Rns bluedevil plasma-thunderbolt bolt --noconfirm
 
 
 wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/arc-kde/master/install.sh | sh
