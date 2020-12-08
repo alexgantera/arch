@@ -262,7 +262,7 @@ pacman -S mupdf-tools nano-syntax-highlighting neofetch noto-fonts-emoji opendes
 
 pacman -S pamac-aur perl-image-exiftool partitionmanager pcmanfm pkgfile p7zip pulseaudio-alsa --noconfirm
 
-pacman -S pipewire-pulse python-pip python-virtualenv qbittorrent plasma5-applets-weather-widget qt5-xmlpatterns reflector systemd-kcm sddm-kcm smplayer --noconfirm
+pacman -S python-pip python-virtualenv qbittorrent plasma5-applets-weather-widget qt5-xmlpatterns systemd-kcm sddm-kcm smplayer --noconfirm
 
 pacman -S smplayer-themes sox spectacle telegram-desktop terminus-font terminus-font-otb timeshift --noconfirm
 
