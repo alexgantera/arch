@@ -252,19 +252,19 @@ pacman -S alsa-utils ark aspell aspell-en aspell-ru audacious audacious-plugins 
 
 pacman -S firefox-i18n-ru dnsmasq dolphin-plugins downgrade fd filelight findutils fish fzf git gnome-calculator grsync --noconfirm
 
-pacman -S gtk-engine-murrine gvfs gwenview haveged highlight kfind lib32-alsa-plugins --noconfirm
+pacman -S gtk-engine-murrine telegram-desktop gvfs gwenview haveged highlight kfind lib32-alsa-plugins --noconfirm
 
 pacman -S lib32-freetype2 lib32-glu lib32-libcurl-gnutls lib32-libpulse lib32-libxft --noconfirm
 
 pacman -S lib32-libxinerama lib32-libxrandr lib32-openal lib32-openssl-1.0 lib32-sdl2_mixer --noconfirm
 
-pacman -S mupdf-tools nano-syntax-highlighting neofetch noto-fonts-emoji opendesktop-fonts --noconfirm
+pacman -S nano-syntax-highlighting neofetch noto-fonts-emoji opendesktop-fonts --noconfirm
 
 pacman -S pamac-aur perl-image-exiftool partitionmanager pcmanfm pkgfile p7zip pulseaudio-alsa --noconfirm
 
 pacman -S python-pip python-virtualenv qbittorrent plasma5-applets-weather-widget qt5-xmlpatterns systemd-kcm sddm-kcm smplayer --noconfirm
 
-pacman -S smplayer-themes sox spectacle telegram-desktop terminus-font terminus-font-otb timeshift --noconfirm
+pacman -S smplayer-themes sox spectacle terminus-font terminus-font-otb timeshift --noconfirm
 
 pacman -S ttf-arphic-ukai ttf-arphic-uming ttf-caladea ttf-carlito ttf-croscore ttf-dejavu ttf-inconsolata --noconfirm
 
