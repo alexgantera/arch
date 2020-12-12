@@ -270,8 +270,11 @@ pacman -S ttf-arphic-ukai ttf-arphic-uming ttf-caladea ttf-carlito ttf-croscore 
 
 pacman -S ttf-liberation ttf-opensans ttf-sazanami unrar xclip xorg-xrandr xreader zim yay youtube-dl starship --noconfirm
 
+echo "Установить pipewire-pulse?"
 pacman -S pipewire-pulse
 
+echo "Установить kwin-lowlatency?"
+pacman -S kwin-lowlatency
 
 pacman -Rns bluedevil plasma-thunderbolt bolt --noconfirm
 
