@@ -250,7 +250,7 @@ pacman -Sy plasma kde-system-meta kio-extras konsole yakuake htop dkms --noconfi
 
 pacman -S alsa-utils ark aspell aspell-en aspell-ru audacious audacious-plugins bat bind bleachbit --noconfirm
 
-pacman -S firefox-i18n-ru dnsmasq dolphin-plugins downgrade fd filelight findutils fish fzf git gnome-calculator grsync --noconfirm
+pacman -S firefox-i18n-ru firefox-ublock-origin dnsmasq dolphin-plugins downgrade fd filelight findutils fish fzf git gnome-calculator grsync --noconfirm
 
 pacman -S gtk-engine-murrine telegram-desktop gvfs gwenview haveged highlight kfind lib32-alsa-plugins --noconfirm
 
