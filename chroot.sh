@@ -250,11 +250,11 @@ pacman -Sy plasma kde-system-meta kio-extras konsole yakuake htop dkms --noconfi
 
 pacman -S alsa-utils ark aspell aspell-en aspell-ru audacious audacious-plugins bat bind bleachbit --noconfirm
 
-pacman -S firefox-i18n-ru firefox-ublock-origin dnsmasq dolphin-plugins downgrade fd filelight findutils fish fzf git gnome-calculator grsync --noconfirm
+pacman -S firefox-i18n-ru firefox-ublock-origin dnsmasq dolphin-plugins downgrade fd filelight findutils fish fzf git --noconfirm
 
-pacman -S gtk-engine-murrine telegram-desktop gvfs gwenview haveged highlight kfind lib32-alsa-plugins --noconfirm
+pacman -S gnome-calculator grsync gtk-engine-murrine telegram-desktop gvfs gwenview haveged highlight kfind --noconfirm
 
-pacman -S lib32-freetype2 lib32-glu lib32-libcurl-gnutls lib32-libpulse lib32-libxft --noconfirm
+pacman -S lib32-alsa-plugins lib32-freetype2 lib32-glu lib32-libcurl-gnutls lib32-libpulse lib32-libxft --noconfirm
 
 pacman -S lib32-libxinerama lib32-libxrandr lib32-openal lib32-openssl-1.0 lib32-sdl2_mixer --noconfirm
 
@@ -276,7 +276,7 @@ pacman -S pipewire-pulse
 echo "Установить kwin-lowlatency?"
 pacman -S kwin-lowlatency
 
-pacman -Rns bluedevil plasma-thunderbolt bolt --noconfirm
+pacman -Rns bluedevil discover plasma-thunderbolt bolt --noconfirm
 
 
 wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/arc-kde/master/install.sh | sh
