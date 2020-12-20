@@ -281,7 +281,7 @@ pacman -Rns bluedevil discover plasma-thunderbolt bolt --noconfirm
 
 wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/arc-kde/master/install.sh | sh
 
-echo "Добавление хука автоматическjq очистки кэша pacman "
+echo "Добавление хука автоматической очистки кэша pacman "
 echo "[Trigger]
 Operation = Remove
 Operation = Install
@@ -290,7 +290,7 @@ Type = Package
 Target = *
 
 [Action]
-Description = Removing unnecessary cached files (keeping the latest two)…
+Description = Removing unnecessary cached files…
 When = PostTransaction
 Exec = /usr/bin/paccache -rvk0" >> /usr/share/libalpm/hooks/cleanup.hook
 echo "Хук добавлен "
