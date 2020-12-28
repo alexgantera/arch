@@ -258,15 +258,15 @@ pacman -S lib32-alsa-plugins lib32-freetype2 lib32-glu lib32-libcurl-gnutls lib3
 
 pacman -S lib32-libxinerama lib32-libxrandr lib32-openal lib32-openssl-1.0 lib32-sdl2_mixer --noconfirm
 
-pacman -S nano-syntax-highlighting neofetch noto-fonts-emoji opendesktop-fonts --noconfirm
+pacman -S nano-syntax-highlighting neofetch noto-fonts-emoji pamac-aur perl-image-exiftool --noconfirm
 
-pacman -S pamac-aur perl-image-exiftool partitionmanager pcmanfm pkgfile p7zip pulseaudio-alsa --noconfirm
+pacman -S partitionmanager pcmanfm pkgfile p7zip pulseaudio-alsa python-pip python-virtualenv --noconfirm
 
-pacman -S python-pip python-virtualenv qbittorrent plasma5-applets-weather-widget qt5-xmlpatterns systemd-kcm sddm-kcm smplayer --noconfirm
+pacman -S qbittorrent plasma5-applets-weather-widget qt5-xmlpatterns systemd-kcm --noconfirm
 
-pacman -S smplayer-themes sox spectacle terminus-font timeshift --noconfirm
+pacman -S sddm-kcm smplayer smplayer-themes sox spectacle terminus-font timeshift --noconfirm
 
-pacman -S ttf-arphic-ukai ttf-arphic-uming ttf-caladea ttf-carlito ttf-croscore ttf-dejavu ttf-inconsolata --noconfirm
+pacman -S ttf-arphic-ukai ttf-arphic-uming ttf-caladea ttf-carlito ttf-croscore ttf-dejavu --noconfirm
 
 pacman -S ttf-liberation ttf-sazanami unrar xclip xorg-xrandr xreader zim yay youtube-dl starship --noconfirm
 
