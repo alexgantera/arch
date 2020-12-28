@@ -264,7 +264,7 @@ pacman -S pamac-aur perl-image-exiftool partitionmanager pcmanfm pkgfile p7zip p
 
 pacman -S python-pip python-virtualenv qbittorrent plasma5-applets-weather-widget qt5-xmlpatterns systemd-kcm sddm-kcm smplayer --noconfirm
 
-pacman -S smplayer-themes sox spectacle terminus-font terminus-font-otb timeshift --noconfirm
+pacman -S smplayer-themes sox spectacle terminus-font timeshift --noconfirm
 
 pacman -S ttf-arphic-ukai ttf-arphic-uming ttf-caladea ttf-carlito ttf-croscore ttf-dejavu ttf-inconsolata --noconfirm
 
