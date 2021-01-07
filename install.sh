@@ -79,7 +79,7 @@ echo "#################################################"
 echo ""
 efibootmgr
 echo ""
-echo " UEFI( no grub ) или Grub-legcy? "
+echo " UEFI( no grub ) или Grub-legacy? "
 while
     read -n1 -p  "
     1 - UEFI
