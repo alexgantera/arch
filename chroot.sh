@@ -370,9 +370,9 @@ echo "  Установка  программ закончена"
 
 echo ""
 # clear
-# pacman -S zsh zsh-completions zsh-syntax-highlighting zsh-autosuggestions grml-zsh-config --noconfirm
-# echo 'source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh' >> /etc/zsh/zshrc
-# echo 'source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh' >> /etc/zsh/zshrc
+ pacman -S zsh zsh-completions zsh-syntax-highlighting zsh-autosuggestions grml-zsh-config --noconfirm
+ echo 'source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh' >> /etc/zsh/zshrc
+ echo 'source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh' >> /etc/zsh/zshrc
 # # echo 'prompt adam2' >> /etc/zsh/zshrc
 # clear
 
@@ -385,36 +385,36 @@ clear
 
 echo ""
 
-echo "##################################################################################"
-echo "###################№   <<<< Копирование настроек >>>    ######################№№№№"
-echo "##################################################################################"
-
-echo " Копируем настройки из /home/$username/system ?"
-while
-    read -n1 -p  "1 - да, 0 - нет: " vm_cpset # sends right after the keypress
-    echo ''
-    [[ "$vm_cpset" =~ [^10] ]]
-do
-    :
-done
-if [[ $vm_cpset == 0 ]]; then
-  echo 'этап пропущен'
-elif [[ $vm_cpset == 1 ]]; then
-
-rm -r /root
-rm -r /usr/share/icons
-rm -r /usr/share/sddm
-
-cd /home/$username/system/
-rsync -r -t -v --progress -l -s etc root /
-rsync -r -t -v --progress -l -s icons /usr/share
-rsync -r -t -v --progress -l -s sddm /usr/share
-rsync -r -t -v --progress -l -s FullRepresentation.qml /usr/share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui
-
-fi
-clear
-mkinitcpio -p linux
-grub-mkconfig -o /boot/grub/grub.cfg
+#echo "##################################################################################"
+#echo "###################№   <<<< Копирование настроек >>>    ######################№№№№"
+#echo "##################################################################################"
+#
+#echo " Копируем настройки из /home/$username/system ?"
+#while
+#    read -n1 -p  "1 - да, 0 - нет: " vm_cpset # sends right after the keypress
+#    echo ''
+#    [[ "$vm_cpset" =~ [^10] ]]
+#do
+#    :
+#done
+#if [[ $vm_cpset == 0 ]]; then
+#  echo 'этап пропущен'
+#elif [[ $vm_cpset == 1 ]]; then
+#
+#rm -r /root
+#rm -r /usr/share/icons
+#rm -r /usr/share/sddm
+#
+#cd /home/$username/system/
+#rsync -r -t -v --progress -l -s etc root /
+#rsync -r -t -v --progress -l -s icons /usr/share
+#rsync -r -t -v --progress -l -s sddm /usr/share
+#rsync -r -t -v --progress -l -s FullRepresentation.qml /usr/share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui
+#
+#fi
+#clear
+#mkinitcpio -p linux
+#grub-mkconfig -o /boot/grub/grub.cfg
 
 echo "
 Данный этап может исключить возможные ошибки при первом запуске системы
