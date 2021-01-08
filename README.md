@@ -1,5 +1,5 @@
 # arch
-Установка Arch Linux KDE
+Установка Arch Linux KDE:
 
 curl -OL https://git.io/install-arch.sh
 
