@@ -5,7 +5,7 @@ curl -OL https://git.io/arch-kde
 
 chmod +x arch-kde
 
-./install-arch.sh
+./arch-kde
 
 Установка Arch Linux XFCE:
 
