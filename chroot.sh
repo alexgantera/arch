@@ -32,9 +32,131 @@ echo " очистка завершена "
 fi
 echo " Настройка localtime "
 echo ""
-ln -sf /usr/share/zoneinfo/Europe/Moscow /etc/localtime
-echo " Часовой пояс установлен "
+echo " Укажите город(1-27) и нажмите Enter  "
+ while
+    read   -p  "
+    1 - Калининград        14 - Красноярск
 
+    2 - Киев               15 - Магадан
+
+    3 - Киров              16 - Новокузнецк
+
+    4 - Минск              17 - Новосибирск
+
+    5 - Москва             18 - Омск
+
+    6 - Самара             19 - Уральск
+
+    7 - Саратов            20 - Алматы
+
+    8 - Ульяновск          21 - Среднеколымск
+
+    9 - Запарожье          22 - Ташкент
+
+    10 - Чита              23 - Тбилиси
+
+    11 - Иркутск           24 - Томск
+
+    12 - Стамбул           25 - Якутск
+
+    13 - Камчатка          26 - Екатеринбург
+
+                27 - Ереван
+
+
+0 - пропустить  : " wm_sity
+    echo ''
+    [[ $wm_sity -lt 0 ||$wm_sity -gt 27 || "$wm_sity" =~ [^12345670] ]]
+do
+    :
+done
+if [[ $wm_sity == 1 ]]; then
+   ln -sf /usr/share/zoneinfo/Europe/Kaliningrad /etc/localtime
+    echo " Калиниград "
+elif [[ $wm_sity == 2 ]]; then
+  ln -sf /usr/share/zoneinfo/Europe/Kiev /etc/localtime
+    echo " Киев  "
+elif [[ $wm_sity == 3 ]]; then
+   ln -sf /usr/share/zoneinfo/Europe/Kirov /etc/localtime
+    echo " Киров  "
+elif [[ $wm_sity == 4 ]]; then
+    ln -sf /usr/share/zoneinfo/Europe/Minsk /etc/localtime
+    echo " Минск  "
+elif [[ $wm_sity == 5 ]]; then
+    ln -sf /usr/share/zoneinfo/Europe/Moscow /etc/localtime
+    echo " Москва  "
+elif [[ $wm_sity == 6 ]]; then
+    ln -sf /usr/share/zoneinfo/Europe/Samara /etc/localtime
+    echo " Самара   "
+elif [[ $wm_sity == 7 ]]; then
+    ln -sf /usr/share/zoneinfo/Europe/Saratov /etc/localtime
+    echo " Саратов   "
+elif [[ $wm_sity == 8 ]]; then
+   ln -sf /usr/share/zoneinfo/Europe/Ulyanovsk /etc/localtime
+    echo " Ульяновск  "
+elif [[ $wm_sity == 9 ]]; then
+    ln -sf /usr/share/zoneinfo/Europe/Zaporozhye /etc/localtime
+    echo " Запорожье "
+elif [[ $wm_sity == 10 ]]; then
+   ln -sf /usr/share/zoneinfo/Asia/Chita /etc/localtime
+    echo " Чита "
+elif [[ $wm_sity == 11 ]]; then
+    ln -sf /usr/share/zoneinfo/Asia/Irkutsk /etc/localtime
+    echo " Иркутск  "
+elif [[ $wm_sity == 12 ]]; then
+   ln -sf /usr/share/zoneinfo/Asia/Istanbul /etc/localtime
+    echo " Стамбул  "
+elif [[ $wm_sity == 13 ]]; then
+    ln -sf /usr/share/zoneinfo/Asia/Kamchatka /etc/localtime
+    echo " Камчатка "
+elif [[ $wm_sity == 14 ]]; then
+    ln -sf /usr/share/zoneinfo/Asia/Krasnoyarsk /etc/localtime
+    echo " Красноярск "
+elif [[ $wm_sity == 15 ]]; then
+    ln -sf /usr/share/zoneinfo/Asia/Magadan /etc/localtime
+    echo " Магадан   "
+elif [[ $wm_sity == 16 ]]; then
+    ln -sf /usr/share/zoneinfo/Asia/Novokuznetsk /etc/localtime
+    echo " Новокузнецк   "
+elif [[ $wm_sity == 17 ]]; then
+   ln -sf /usr/share/zoneinfo/Asia/Novosibirsk /etc/localtime
+    echo " Новосибирск  "
+elif [[ $wm_sity == 18 ]]; then
+    ln -sf /usr/share/zoneinfo/Asia/Omsk /etc/localtime
+    echo " Омск "
+elif [[ $wm_sity == 19 ]]; then
+   ln -sf /usr/share/zoneinfo/Asia/Oral /etc/localtime
+    echo " Уральск "
+elif [[ $wm_sity == 20 ]]; then
+    ln -sf /usr/share/zoneinfo/Asia/Almaty /etc/localtime
+    echo " Алматы  "
+elif [[ $wm_sity == 21 ]]; then
+   ln -sf /usr/share/zoneinfo/Asia/Srednekolymsk /etc/localtime
+    echo " Среднеколымск  "
+elif [[ $wm_sity == 22 ]]; then
+    ln -sf /usr/share/zoneinfo/Asia/Tashkent /etc/localtime
+    echo " Ташкент "
+elif [[ $wm_sity == 23 ]]; then
+   ln -sf /usr/share/zoneinfo/Asia/Tbilisi /etc/localtime
+    echo " Тбилиси "
+elif [[ $wm_sity == 24 ]]; then
+   ln -sf /usr/share/zoneinfo/Asia/Tomsk /etc/localtime
+    echo " Томск   "
+elif [[ $wm_sity == 25 ]]; then
+    ln -sf /usr/share/zoneinfo/Asia/Yakutsk /etc/localtime
+    echo " Якутск   "
+elif [[ $wm_sity == 26 ]]; then
+    ln -sf /usr/share/zoneinfo/Asia/Yekaterinburg /etc/localtime
+    echo " Екатеринбург "
+elif [[ $wm_sity == 27 ]]; then
+    ln -sf /usr/share/zoneinfo/Asia/Yerevan /etc/localtime
+    echo " Ереван "
+elif [[ $wm_sity == 0 ]]; then
+clear
+echo " Этап пропущен "
+echo ""
+fi
+echo " Часовой пояс установлен "
 #####################################
 echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
 echo "ru_RU.UTF-8 UTF-8" >> /etc/locale.gen
@@ -179,58 +301,13 @@ fi
 mkinitcpio -p linux
 ##########
 echo ""
-#echo " Настроим Sudo? "
-#while
-#    read -n1 -p  "
-#    1 - с паролем
-#
-#    2 - без пароля
-#
-#    0 - Sudo не добавляем : " i_sudo   # sends right after the keypress
-#    echo ''
-#    [[ "$i_sudo" =~ [^120] ]]
-#do
-#    :
-#done
-#if [[ $i_sudo  == 0 ]]; then
-#clear
-#echo " Добавление sudo пропущено"
-#elif [[ $i_sudo  == 1 ]]; then
 echo '%wheel ALL=(ALL) ALL' >> /etc/sudoers
-#clear
-#echo " Sudo с запросом пароля установлено "
-#elif [[ $i_sudo  == 2 ]]; then
-#echo '%wheel ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
-#clear
-#echo " Sudo nopassword добавлено  "
-#fi
-###########
 echo ""
 echo ""
 echo " Добавление Multilib репозитория"
 echo '[multilib]' >> /etc/pacman.conf
 echo 'Include = /etc/pacman.d/mirrorlist' >> /etc/pacman.conf
 echo " Multilib репозиторий добавлен"
-#echo " Настроим multilib? "
-#while
-#    read -n1 -p  "
-#    1 - да
-#
-#    0 - нет : " i_multilib   # sends right after the keypress
-#    echo ''
-#    [[ "$i_multilib" =~ [^10] ]]
-#do
-#    :
-#done
-#if [[ $i_multilib  == 0 ]]; then
-#clear
-#echo " Добавление мультилиб репозитория  пропущено"
-#elif [[ $i_multilib  == 1 ]]; then
-#echo '[multilib]' >> /etc/pacman.conf
-#echo 'Include = /etc/pacman.d/mirrorlist' >> /etc/pacman.conf
-#clear
-#echo " Multilib репозиторий добавлен"
-#fi
 ######
 pacman -Sy xorg-server xorg-drivers --noconfirm
 clear
@@ -271,7 +348,7 @@ pacman -S ttf-arphic-ukai ttf-arphic-uming ttf-caladea ttf-carlito ttf-croscore 
 pacman -S ttf-liberation ttf-sazanami unrar xclip xorg-xrandr xreader zim yay youtube-dl starship --noconfirm
 
 
-pacman -Rns bluedevil discover plasma-thunderbolt bolt --noconfirm
+pacman -Rns discover plasma-thunderbolt bolt --noconfirm
 
 
 wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/arc-kde/master/install.sh | sh
@@ -301,12 +378,6 @@ Exec = /usr/bin/paccache -rvk0" >> /usr/share/libalpm/hooks/cleanup.hook
 echo "Хук добавлен "
 clear
 echo " "
-
-#curl -O https://download.sublimetext.com/sublimehq-pub.gpg && sudo pacman-key --add sublimehq-pub.gpg && sudo pacman-key --lsign-key 8A8F901A && rm sublimehq-pub.gpg
-#echo -e "\n[sublime-text]\nServer = https://download.sublimetext.com/arch/stable/x86_64" | sudo tee -a /etc/pacman.conf
-#clear
-#pacman -Sy sublime-text --noconfirm --overwrite='*' --noconfirm
-clear
 echo " "
 
 grub-mkfont -s 16 -o /boot/grub/ter-u16b.pf2 /usr/share/fonts/misc/ter-u16b.otb
@@ -332,47 +403,6 @@ clear
 echo " установка sddm  завершена "
 pacman -Sy networkmanager networkmanager-openvpn network-manager-applet --noconfirm
 systemctl enable NetworkManager.service
-#systemctl enable dhcpcd.service
-#echo "#####################################################################"
-#echo ""
-#echo " Нужен NetworkManager ? "
-#while
-#    read -n1 -p  "
-#    1 - да
-#
-#    0 - нет : " i_network   # sends right after the keypress
-#    echo ''
-#    [[ "$i_network" =~ [^10] ]]
-#do
-#    :
-#done
-#if [[ $i_network  == 1 ]]; then
-#pacman -Sy networkmanager networkmanager-openvpn network-manager-applet --noconfirm
-#systemctl enable NetworkManager.service
-#elif [[ $i_network  == 0 ]]; then
-#echo " Установка NetworkManager пропущена "
-#echo ""
-#echo " Добавим dhcpcd в автозагрузку( для проводного интернета, который  получает настройки от роутера ) ? "
-#echo ""
-#echo "при необходимости это можно будет сделать уже в установленной системе "
-#while
-#    read -n1 -p  "
-#    1 - включить dhcpcd
-#
-#    0 - не включать dhcpcd " x_dhcpcd
-#    echo ''
-#    [[ "$x_dhcpcd" =~ [^10] ]]
-#do
-#    :
-#done
-#if [[ $x_dhcpcd == 0 ]]; then
-#  echo ' dhcpcd не включен в автозагрузку, при необходиости это можно будет сделать уже в установленной системе '
-#elif [[ $x_dhcpcd == 1 ]]; then
-#systemctl enable dhcpcd.service
-#clear
-#echo "Dhcpcd успешно добавлен в автозагрузку"
-#fi
-#fi
 clear
 echo ""
 
@@ -394,37 +424,6 @@ clear
 clear
 
 echo ""
-
-#echo "##################################################################################"
-#echo "###################№   <<<< Копирование настроек >>>    ######################№№№№"
-#echo "##################################################################################"
-#
-#echo " Копируем настройки из /home/$username/system ?"
-#while
-#    read -n1 -p  "1 - да, 0 - нет: " vm_cpset # sends right after the keypress
-#    echo ''
-#    [[ "$vm_cpset" =~ [^10] ]]
-#do
-#    :
-#done
-#if [[ $vm_cpset == 0 ]]; then
-#  echo 'этап пропущен'
-#elif [[ $vm_cpset == 1 ]]; then
-#
-#rm -r /root
-#rm -r /usr/share/icons
-#rm -r /usr/share/sddm
-#
-#cd /home/$username/system/
-#rsync -r -t -v --progress -l -s etc root /
-#rsync -r -t -v --progress -l -s icons /usr/share
-#rsync -r -t -v --progress -l -s sddm /usr/share
-#rsync -r -t -v --progress -l -s FullRepresentation.qml /usr/share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui
-#
-#fi
-#clear
-#mkinitcpio -p linux
-#grub-mkconfig -o /boot/grub/grub.cfg
 
 echo "
 Данный этап может исключить возможные ошибки при первом запуске системы
