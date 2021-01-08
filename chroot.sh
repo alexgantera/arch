@@ -179,31 +179,7 @@ fi
 mkinitcpio -p linux
 ##########
 echo ""
-#echo " Настроим Sudo? "
-#while
-#    read -n1 -p  "
-#    1 - с паролем
-#
-#    2 - без пароля
-#
-#    0 - Sudo не добавляем : " i_sudo   # sends right after the keypress
-#    echo ''
-#    [[ "$i_sudo" =~ [^120] ]]
-#do
-#    :
-#done
-#if [[ $i_sudo  == 0 ]]; then
-#clear
-#echo " Добавление sudo пропущено"
-#elif [[ $i_sudo  == 1 ]]; then
 echo '%wheel ALL=(ALL) ALL' >> /etc/sudoers
-#clear
-#echo " Sudo с запросом пароля установлено "
-#elif [[ $i_sudo  == 2 ]]; then
-#echo '%wheel ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
-#clear
-#echo " Sudo nopassword добавлено  "
-#fi
 ###########
 echo ""
 echo ""
@@ -211,26 +187,6 @@ echo " Добавление Multilib репозитория"
 echo '[multilib]' >> /etc/pacman.conf
 echo 'Include = /etc/pacman.d/mirrorlist' >> /etc/pacman.conf
 echo " Multilib репозиторий добавлен"
-#echo " Настроим multilib? "
-#while
-#    read -n1 -p  "
-#    1 - да
-#
-#    0 - нет : " i_multilib   # sends right after the keypress
-#    echo ''
-#    [[ "$i_multilib" =~ [^10] ]]
-#do
-#    :
-#done
-#if [[ $i_multilib  == 0 ]]; then
-#clear
-#echo " Добавление мультилиб репозитория  пропущено"
-#elif [[ $i_multilib  == 1 ]]; then
-#echo '[multilib]' >> /etc/pacman.conf
-#echo 'Include = /etc/pacman.d/mirrorlist' >> /etc/pacman.conf
-#clear
-#echo " Multilib репозиторий добавлен"
-#fi
 ######
 pacman -Sy xorg-server xorg-drivers --noconfirm
 clear
@@ -302,13 +258,6 @@ echo "Хук добавлен "
 clear
 echo " "
 
-#curl -O https://download.sublimetext.com/sublimehq-pub.gpg && sudo pacman-key --add sublimehq-pub.gpg && sudo pacman-key --lsign-key 8A8F901A && rm sublimehq-pub.gpg
-#echo -e "\n[sublime-text]\nServer = https://download.sublimetext.com/arch/stable/x86_64" | sudo tee -a /etc/pacman.conf
-#clear
-#pacman -Sy sublime-text --noconfirm --overwrite='*' --noconfirm
-clear
-echo " "
-
 grub-mkfont -s 16 -o /boot/grub/ter-u16b.pf2 /usr/share/fonts/misc/ter-u16b.otb
 grub-mkconfig -o /boot/grub/grub.cfg
 clear
@@ -332,47 +281,6 @@ clear
 echo " установка sddm  завершена "
 pacman -Sy networkmanager networkmanager-openvpn network-manager-applet --noconfirm
 systemctl enable NetworkManager.service
-#systemctl enable dhcpcd.service
-#echo "#####################################################################"
-#echo ""
-#echo " Нужен NetworkManager ? "
-#while
-#    read -n1 -p  "
-#    1 - да
-#
-#    0 - нет : " i_network   # sends right after the keypress
-#    echo ''
-#    [[ "$i_network" =~ [^10] ]]
-#do
-#    :
-#done
-#if [[ $i_network  == 1 ]]; then
-#pacman -Sy networkmanager networkmanager-openvpn network-manager-applet --noconfirm
-#systemctl enable NetworkManager.service
-#elif [[ $i_network  == 0 ]]; then
-#echo " Установка NetworkManager пропущена "
-#echo ""
-#echo " Добавим dhcpcd в автозагрузку( для проводного интернета, который  получает настройки от роутера ) ? "
-#echo ""
-#echo "при необходимости это можно будет сделать уже в установленной системе "
-#while
-#    read -n1 -p  "
-#    1 - включить dhcpcd
-#
-#    0 - не включать dhcpcd " x_dhcpcd
-#    echo ''
-#    [[ "$x_dhcpcd" =~ [^10] ]]
-#do
-#    :
-#done
-#if [[ $x_dhcpcd == 0 ]]; then
-#  echo ' dhcpcd не включен в автозагрузку, при необходиости это можно будет сделать уже в установленной системе '
-#elif [[ $x_dhcpcd == 1 ]]; then
-#systemctl enable dhcpcd.service
-#clear
-#echo "Dhcpcd успешно добавлен в автозагрузку"
-#fi
-#fi
 clear
 echo ""
 
@@ -380,9 +288,9 @@ echo "  Установка  программ закончена"
 
 echo ""
 # clear
- pacman -S zsh zsh-completions zsh-syntax-highlighting zsh-autosuggestions grml-zsh-config --noconfirm
- echo 'source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh' >> /etc/zsh/zshrc
- echo 'source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh' >> /etc/zsh/zshrc
+# pacman -S zsh zsh-completions zsh-syntax-highlighting zsh-autosuggestions grml-zsh-config --noconfirm
+# echo 'source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh' >> /etc/zsh/zshrc
+# echo 'source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh' >> /etc/zsh/zshrc
 # # echo 'prompt adam2' >> /etc/zsh/zshrc
 # clear
 
@@ -395,36 +303,36 @@ clear
 
 echo ""
 
-#echo "##################################################################################"
-#echo "###################№   <<<< Копирование настроек >>>    ######################№№№№"
-#echo "##################################################################################"
-#
-#echo " Копируем настройки из /home/$username/system ?"
-#while
-#    read -n1 -p  "1 - да, 0 - нет: " vm_cpset # sends right after the keypress
-#    echo ''
-#    [[ "$vm_cpset" =~ [^10] ]]
-#do
-#    :
-#done
-#if [[ $vm_cpset == 0 ]]; then
-#  echo 'этап пропущен'
-#elif [[ $vm_cpset == 1 ]]; then
-#
-#rm -r /root
-#rm -r /usr/share/icons
-#rm -r /usr/share/sddm
-#
-#cd /home/$username/system/
-#rsync -r -t -v --progress -l -s etc root /
-#rsync -r -t -v --progress -l -s icons /usr/share
-#rsync -r -t -v --progress -l -s sddm /usr/share
-#rsync -r -t -v --progress -l -s FullRepresentation.qml /usr/share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui
-#
-#fi
-#clear
-#mkinitcpio -p linux
-#grub-mkconfig -o /boot/grub/grub.cfg
+echo "##################################################################################"
+echo "###################№   <<<< Копирование настроек >>>    ######################№№№№"
+echo "##################################################################################"
+
+echo " Копируем настройки из /home/$username/system ?"
+while
+    read -n1 -p  "1 - да, 0 - нет: " vm_cpset # sends right after the keypress
+    echo ''
+    [[ "$vm_cpset" =~ [^10] ]]
+do
+    :
+done
+if [[ $vm_cpset == 0 ]]; then
+  echo 'этап пропущен'
+elif [[ $vm_cpset == 1 ]]; then
+
+rm -r /root
+rm -r /usr/share/icons
+rm -r /usr/share/sddm
+
+cd /home/$username/system/
+rsync -r -t -v --progress -l -s etc root /
+rsync -r -t -v --progress -l -s icons /usr/share
+rsync -r -t -v --progress -l -s sddm /usr/share
+rsync -r -t -v --progress -l -s FullRepresentation.qml /usr/share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui
+
+fi
+clear
+mkinitcpio -p linux
+grub-mkconfig -o /boot/grub/grub.cfg
 
 echo "
 Данный этап может исключить возможные ошибки при первом запуске системы
