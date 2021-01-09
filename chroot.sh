@@ -341,7 +341,7 @@ pacman -S partitionmanager pcmanfm pkgfile p7zip pulseaudio-alsa python-pip pyth
 
 pacman -S pamac-aur qbittorrent plasma5-applets-weather-widget qt5-xmlpatterns systemd-kcm --noconfirm
 
-pacman -S kate sddm-kcm smplayer smplayer-themes sox spectacle terminus-font timeshift --noconfirm
+pacman -S inxi kate smplayer smplayer-themes sox spectacle terminus-font timeshift --noconfirm
 
 pacman -S ttf-arphic-ukai ttf-arphic-uming ttf-caladea ttf-carlito ttf-croscore ttf-dejavu --noconfirm
 
