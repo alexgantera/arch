@@ -230,7 +230,6 @@ pacman -Rns bluedevil discover plasma-thunderbolt bolt --noconfirm
 wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/arc-kde/master/install.sh | sh
 
 git clone https://aur.archlinux.org/pamac-tray-icon-plasma.git
-cd /home/$username
 chown -R $username:users /home/$username/pamac-tray-icon-plasma
 chown -R $username:users /home/$username/pamac-tray-icon-plasma/PKGBUILD
 cd /home/$username/pamac-tray-icon-plasma
