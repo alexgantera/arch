@@ -30,6 +30,7 @@ rm -rf /home/$username/.*
 clear
 echo " очистка завершена "
 fi
+#####################################
 echo " Настройка localtime "
 echo ""
 echo " Укажите город(1-27) и нажмите Enter  "
