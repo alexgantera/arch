@@ -336,7 +336,7 @@ pacman -S gwenview haveged highlight kfind lib32-alsa-plugins lib32-freetype2 li
 
 pacman -S lib32-libpulse lib32-libxft lib32-libxinerama lib32-libxrandr lib32-openal lib32-openssl-1.0 --noconfirm
 
-pacman -S lib32-sdl2_mixer nano-syntax-highlighting neofetch noto-fonts-emoji okular pamac-aur perl-image-exiftool --noconfirm
+pacman -S lib32-sdl2_mixer nano-syntax-highlighting neofetch noto-fonts-emoji okular perl-image-exiftool --noconfirm
 
 pacman -S partitionmanager pcmanfm pkgfile p7zip pulseaudio-alsa python-pip python-virtualenv --noconfirm
 
