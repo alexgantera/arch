@@ -327,25 +327,25 @@ pacman -Sy plasma kde-system-meta kio-extras konsole yakuake htop dkms --noconfi
 
 pacman -S alsa-utils ark aspell aspell-en aspell-ru audacious audacious-plugins bat bind bleachbit --noconfirm
 
-pacman -S firefox-i18n-ru firefox-ublock-origin dnsmasq dolphin-plugins downgrade fd filelight findutils fish fzf git --noconfirm
+pacman -S firefox-i18n-ru firefox-ublock-origin dnsmasq dolphin-plugins downgrade fd filelight findutils fzf git --noconfirm
 
-pacman -S gnome-calculator grsync gtk-engine-murrine telegram-desktop gvfs gwenview haveged highlight kfind --noconfirm
+pacman -S gnome-calculator gtk-engine-murrine telegram-desktop gvfs gvfs-afc gvfs-mpt gvfs-gphoto2 gvfs-smb --noconfirm
 
-pacman -S lib32-alsa-plugins lib32-freetype2 lib32-glu lib32-libcurl-gnutls lib32-libpulse lib32-libxft --noconfirm
+pacman -S gwenview haveged highlight kfind lib32-alsa-plugins lib32-freetype2 lib32-glu lib32-libcurl-gnutls --noconfirm
 
-pacman -S lib32-libxinerama lib32-libxrandr lib32-openal lib32-openssl-1.0 lib32-sdl2_mixer --noconfirm
+pacman -S lib32-libpulse lib32-libxft lib32-libxinerama lib32-libxrandr lib32-openal lib32-openssl-1.0 --noconfirm
 
-pacman -S nano-syntax-highlighting neofetch noto-fonts-emoji pamac-aur perl-image-exiftool --noconfirm
+pacman -S lib32-sdl2_mixer nano-syntax-highlighting neofetch noto-fonts-emoji okular pamac-aur perl-image-exiftool --noconfirm
 
 pacman -S partitionmanager pcmanfm pkgfile p7zip pulseaudio-alsa python-pip python-virtualenv --noconfirm
 
 pacman -S pamac-aur qbittorrent plasma5-applets-weather-widget qt5-xmlpatterns systemd-kcm --noconfirm
 
-pacman -S inxi kate smplayer smplayer-themes sox spectacle terminus-font timeshift --noconfirm
+pacman -S inxi kate smplayer smplayer-themes spectacle terminus-font timeshift --noconfirm
 
 pacman -S ttf-arphic-ukai ttf-arphic-uming ttf-caladea ttf-carlito ttf-croscore ttf-dejavu --noconfirm
 
-pacman -S ttf-liberation ttf-sazanami unrar xclip xorg-xrandr xreader zim yay youtube-dl starship --noconfirm
+pacman -S ttf-liberation ttf-sazanami unrar xclip xorg-xrandr zim yay youtube-dl starship --noconfirm
 
 
 pacman -Rns discover plasma-thunderbolt bolt --noconfirm
@@ -406,24 +406,43 @@ clear
 echo ""
 
 echo "  Установка  программ закончена"
-
+echo " Заменим оболочку терминала на fish или zsh? "
 echo ""
-# clear
- pacman -S zsh zsh-completions zsh-syntax-highlighting zsh-autosuggestions grml-zsh-config --noconfirm
- echo 'source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh' >> /etc/zsh/zshrc
- echo 'source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh' >> /etc/zsh/zshrc
-# # echo 'prompt adam2' >> /etc/zsh/zshrc
-# clear
+echo "При необходимости можно будет установить другую оболочку в уже установленной системе "
+while
+    read -n1 -p  "
+    1 - установить zsh
+    2 - установить fish
+    0 - оставим bash по умолчанию " x_shell
+    echo ''
+    [[ "$x_shell" =~ [^120] ]]
+do
+    :
+done
+if [[ $x_shell == 0 ]]; then
+clear
+  echo ' Оболочка не изменена, по умолчанию bash '
+elif [[ $x_shell == 1 ]]; then
+clear
+pacman -S zsh  zsh-syntax-highlighting zsh-autosuggestions grml-zsh-config --noconfirm
+echo 'source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh' >> /etc/zsh/zshrc
+echo 'source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh' >> /etc/zsh/zshrc
+
+chsh -s /bin/zsh
+chsh -s /bin/zsh $username
+clear
+echo " При первом запуске консоли(терминала) нажмите "0" "
+echo " Оболочка изменена с bash на zsh "
+elif [[ $x_shell == 2 ]]; then
+pacman -S fish
 
 chsh -s /bin/fish
 chsh -s /bin/fish $username
 clear
-# echo " при первом запуске консоли(терминала) нажмите "0" "
-
-clear
-
+echo " Оболочка изменена с bash на fish "
+fi
 echo ""
-
+clear
 echo "
 Данный этап может исключить возможные ошибки при первом запуске системы
 Фаил откроется через редактор  !nano!"
