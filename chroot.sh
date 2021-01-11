@@ -204,25 +204,25 @@ echo " Установка KDE и набора программ "
 
 pacman -Sy plasma kde-system-meta kio-extras konsole yakuake htop dkms --noconfirm
 
-pacman -S alsa-utils ark aspell aspell-en aspell-ru audacious audacious-plugins bat bind bleachbit dnsmasq --nocnfirm
+pacman -S alsa-utils ark aspell aspell-en aspell-ru audacious audacious-plugins bat bind bleachbit dnsmasq --noconfirm
 
-pacman -S dolphin-plugins downgrade fd filelight findutils firefox-i18n-ru firefox-ublock-origin fish fzf git --nocnfirm
+pacman -S dolphin-plugins downgrade fd filelight findutils firefox-i18n-ru firefox-ublock-origin fish fzf git --noconfirm
 
-pacman -S gnome-calculator grsync gtk-engine-murrine gvfs gwenview haveged highlight kfind lib32-alsa-plugins --nocnfirm
+pacman -S gnome-calculator grsync gtk-engine-murrine gvfs gwenview haveged highlight kfind lib32-alsa-plugins --noconfirm
 
-pacman -S lib32-freetype2 lib32-glu lib32-libcurl-gnutls lib32-libpulse lib32-libxft lib32-libxinerama --nocnfirm
+pacman -S lib32-freetype2 lib32-glu lib32-libcurl-gnutls lib32-libpulse lib32-libxft lib32-libxinerama --noconfirm
 
-pacman -S lib32-libxrandr lib32-openal lib32-openssl-1.0 lib32-sdl2_mixer nano-syntax-highlighting neofetch --nocnfirm
+pacman -S lib32-libxrandr lib32-openal lib32-openssl-1.0 lib32-sdl2_mixer nano-syntax-highlighting neofetch --noconfirm
 
-pacman -S noto-fonts-emoji p7zip pamac-aur partitionmanager pcmanfm perl-image-exiftool pkgfile --nocnfirm
+pacman -S noto-fonts-emoji p7zip pamac-aur partitionmanager pcmanfm perl-image-exiftool pkgfile --noconfirm
 
-pacman -S plasma5-applets-weather-widget pulseaudio-alsa python-pip python-virtualenv qbittorrent --nocnfirm
+pacman -S plasma5-applets-weather-widget pulseaudio-alsa python-pip python-virtualenv qbittorrent --noconfirm
 
-pacman -S qt5-xmlpatterns smplayer smplayer-themes sox spectacle starship systemd-kcm telegram-desktop --nocnfirm
+pacman -S qt5-xmlpatterns smplayer smplayer-themes sox spectacle starship systemd-kcm telegram-desktop --noconfirm
 
-pacman -S terminus-font timeshift ttf-arphic-ukai ttf-arphic-uming ttf-caladea ttf-carlito ttf-croscore --nocnfirm
+pacman -S terminus-font timeshift ttf-arphic-ukai ttf-arphic-uming ttf-caladea ttf-carlito ttf-croscore --noconfirm
 
-pacman -S ttf-dejavu ttf-liberation ttf-sazanami unrar xclip xorg-xrandr xreader yay youtube-dl zim --nocnfirm
+pacman -S ttf-dejavu ttf-liberation ttf-sazanami unrar xclip xorg-xrandr xreader yay youtube-dl zim --noconfirm
 
 pacman -Rns bluedevil discover plasma-thunderbolt bolt --noconfirm
 
