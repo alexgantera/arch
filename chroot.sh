@@ -233,6 +233,100 @@ pacman -S lib32-vulkan-icd-loader vulkan-radeon lib32-vulkan-radeon --noconfirm
 
 clear
 
+pacman -Rns bluedevil discover plasma-thunderbolt bolt --noconfirm
+
+wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/arc-kde/master/install.sh | sh
+
+
+echo "Добавление хука автоматической очистки кэша pacman "
+echo "[Trigger]
+Operation = Remove
+Operation = Install
+Operation = Upgrade
+Type = Package
+Target = *
+
+[Action]
+Description = Removing unnecessary cached files…
+When = PostTransaction
+Exec = /usr/bin/paccache -rvk0" >> /usr/share/libalpm/hooks/cleanup.hook
+echo "Хук добавлен "
+clear
+echo " "
+
+grub-mkfont -s 16 -o /boot/grub/ter-u16b.pf2 /usr/share/fonts/misc/ter-u16b.otb
+grub-mkconfig -o /boot/grub/grub.cfg
+clear
+pacman -S xorg-xinit --noconfirm
+cp /etc/X11/xinit/xinitrc /home/$username/.xinitrc
+chown $username:users /home/$username/.xinitrc
+chmod +x /home/$username/.xinitrc
+echo "exec startplasma-x11 " >> /home/$username/.xinitrc
+echo ' [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx ' >> /etc/profile
+echo ""
+pacman -R konqueror --noconfirm
+clear
+echo "Plasma KDE успешно установлена"
+echo "Установка sddm "
+pacman -S sddm sddm-kcm --noconfirm
+systemctl enable sddm.service -f
+echo "[General]" >> /etc/sddm.conf
+echo "..." >> /etc/sddm.conf
+echo "Numlock=on" >> /etc/sddm.conf
+clear
+echo " установка sddm  завершена "
+pacman -Sy networkmanager networkmanager-openvpn network-manager-applet --noconfirm
+systemctl enable NetworkManager.service
+clear
+echo ""
+
+echo "  Установка  программ закончена"
+
+echo ""
+# clear
+# pacman -S zsh zsh-completions zsh-syntax-highlighting zsh-autosuggestions grml-zsh-config --noconfirm
+# echo 'source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh' >> /etc/zsh/zshrc
+# echo 'source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh' >> /etc/zsh/zshrc
+# # echo 'prompt adam2' >> /etc/zsh/zshrc
+# clear
+
+chsh -s /bin/fish
+chsh -s /bin/fish $username
+clear
+# echo " при первом запуске консоли(терминала) нажмите "0" "
+
+clear
+
+echo ""
+
+echo "##################################################################################"
+echo "###################№   <<<< Копирование настроек >>>    ######################№№№№"
+echo "##################################################################################"
+
+echo " Копируем настройки из /home/$username/system ?"
+while
+    read -n1 -p  "1 - да, 0 - нет: " vm_cpset # sends right after the keypress
+    echo ''
+    [[ "$vm_cpset" =~ [^10] ]]
+do
+    :
+done
+if [[ $vm_cpset == 0 ]]; then
+  echo 'этап пропущен'
+elif [[ $vm_cpset == 1 ]]; then
+
+rm -r /root
+rm -r /usr/share/icons
+rm -r /usr/share/sddm
+
+cd /home/$username/system/
+rsync -r -t -v --progress -l -s etc root /
+rsync -r -t -v --progress -l -s icons /usr/share
+rsync -r -t -v --progress -l -s sddm /usr/share
+rsync -r -t -v --progress -l -s FullRepresentation.qml /usr/share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui
+
+fi
+clear
 echo " Настройка драйверов AMDGPU "
 echo " "
 echo " Настройка GRUB "
@@ -363,109 +457,6 @@ HOOKS=(base udev autodetect modconf block filesystems keyboard consolefont fsck)
 # Additional options for the compressor
 #COMPRESSION_OPTIONS=()
 " > /etc/mkinitcpio.conf
-
-pacman -Rns bluedevil discover plasma-thunderbolt bolt --noconfirm
-
-
-wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/arc-kde/master/install.sh | sh
-
-git clone https://aur.archlinux.org/pamac-tray-icon-plasma.git
-chown -R $username:users /home/$username/pamac-tray-icon-plasma
-chown -R $username:users /home/$username/pamac-tray-icon-plasma/PKGBUILD
-cd /home/$username/pamac-tray-icon-plasma
-sudo -u $username makepkg -si --noconfirm
-rm -Rf /home/$username/pamac-tray-icon-plasma
-
-
-echo "Добавление хука автоматической очистки кэша pacman "
-echo "[Trigger]
-Operation = Remove
-Operation = Install
-Operation = Upgrade
-Type = Package
-Target = *
-
-[Action]
-Description = Removing unnecessary cached files…
-When = PostTransaction
-Exec = /usr/bin/paccache -rvk0" >> /usr/share/libalpm/hooks/cleanup.hook
-echo "Хук добавлен "
-clear
-echo " "
-
-grub-mkfont -s 16 -o /boot/grub/ter-u16b.pf2 /usr/share/fonts/misc/ter-u16b.otb
-grub-mkconfig -o /boot/grub/grub.cfg
-clear
-pacman -S xorg-xinit --noconfirm
-cp /etc/X11/xinit/xinitrc /home/$username/.xinitrc
-chown $username:users /home/$username/.xinitrc
-chmod +x /home/$username/.xinitrc
-echo "exec startplasma-x11 " >> /home/$username/.xinitrc
-echo ' [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx ' >> /etc/profile
-echo ""
-pacman -R konqueror --noconfirm
-clear
-echo "Plasma KDE успешно установлена"
-echo "Установка sddm "
-pacman -S sddm sddm-kcm --noconfirm
-systemctl enable sddm.service -f
-echo "[General]" >> /etc/sddm.conf
-echo "..." >> /etc/sddm.conf
-echo "Numlock=on" >> /etc/sddm.conf
-clear
-echo " установка sddm  завершена "
-pacman -Sy networkmanager networkmanager-openvpn network-manager-applet --noconfirm
-systemctl enable NetworkManager.service
-clear
-echo ""
-
-echo "  Установка  программ закончена"
-
-echo ""
-# clear
-# pacman -S zsh zsh-completions zsh-syntax-highlighting zsh-autosuggestions grml-zsh-config --noconfirm
-# echo 'source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh' >> /etc/zsh/zshrc
-# echo 'source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh' >> /etc/zsh/zshrc
-# # echo 'prompt adam2' >> /etc/zsh/zshrc
-# clear
-
-chsh -s /bin/fish
-chsh -s /bin/fish $username
-clear
-# echo " при первом запуске консоли(терминала) нажмите "0" "
-
-clear
-
-echo ""
-
-echo "##################################################################################"
-echo "###################№   <<<< Копирование настроек >>>    ######################№№№№"
-echo "##################################################################################"
-
-echo " Копируем настройки из /home/$username/system ?"
-while
-    read -n1 -p  "1 - да, 0 - нет: " vm_cpset # sends right after the keypress
-    echo ''
-    [[ "$vm_cpset" =~ [^10] ]]
-do
-    :
-done
-if [[ $vm_cpset == 0 ]]; then
-  echo 'этап пропущен'
-elif [[ $vm_cpset == 1 ]]; then
-
-rm -r /root
-rm -r /usr/share/icons
-rm -r /usr/share/sddm
-
-cd /home/$username/system/
-rsync -r -t -v --progress -l -s etc root /
-rsync -r -t -v --progress -l -s icons /usr/share
-rsync -r -t -v --progress -l -s sddm /usr/share
-rsync -r -t -v --progress -l -s FullRepresentation.qml /usr/share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui
-
-fi
-clear
 mkinitcpio -p linux
 grub-mkconfig -o /boot/grub/grub.cfg
 
