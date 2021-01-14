@@ -321,6 +321,11 @@ pacman -Syy archlinuxcn-keyring --noconfirm
 clear
 
 echo " Установка KDE и набора программ "
+echo " "
+
+echo "Для отображения иконки Pamac в трее нужно будет установить пакет pamac-tray-icon-plasma "
+
+echo " "
 
 # Последний вариант
 
@@ -351,16 +356,9 @@ pacman -S ttf-liberation ttf-sazanami unrar xclip xorg-xrandr zim yay youtube-dl
 
 pacman -Rns discover plasma-thunderbolt bolt --noconfirm
 
+echo "Для отображения иконки Pamac в трее нужно будет установить пакет pamac-tray-icon-plasma "
 
 wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/arc-kde/master/install.sh | sh
-
-git clone https://aur.archlinux.org/pamac-tray-icon-plasma.git
-chown -R $username:users /home/$username/pamac-tray-icon-plasma
-chown -R $username:users /home/$username/pamac-tray-icon-plasma/PKGBUILD
-cd /home/$username/pamac-tray-icon-plasma
-sudo -u $username makepkg -si --noconfirm
-rm -Rf /home/$username/pamac-tray-icon-plasma
-
 
 echo "Добавление хука автоматической очистки кэша pacman "
 echo "[Trigger]
