@@ -335,7 +335,7 @@ pacman -S alsa-utils ark aspell aspell-en aspell-ru audacious audacious-plugins 
 
 pacman -S firefox-i18n-ru firefox-ublock-origin dnsmasq dolphin-plugins downgrade fd filelight findutils fzf git --noconfirm
 
-pacman -S gnome-calculator gtk-engine-murrine telegram-desktop gvfs gvfs-afc gvfs-mpt gvfs-gphoto2 gvfs-smb --noconfirm
+pacman -S gnome-calculator gtk-engine-murrine telegram-desktop gvfs gvfs-afc gvfs-mtp gvfs-gphoto2 gvfs-smb --noconfirm
 
 pacman -S gwenview haveged highlight kfind lib32-alsa-plugins lib32-freetype2 lib32-glu lib32-libcurl-gnutls --noconfirm
 
