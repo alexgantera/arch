@@ -333,7 +333,7 @@ pacman -Sy plasma kde-system-meta kio-extras konsole yakuake htop dkms --noconfi
 
 pacman -S alsa-utils ark aspell aspell-en aspell-ru audacious audacious-plugins bat bind bleachbit --noconfirm
 
-pacman -S firefox-i18n-ru firefox-ublock-origin dnsmasq dolphin-plugins downgrade fd filelight findutils fzf git --noconfirm
+pacman -S firefox-i18n-ru dnsmasq dolphin-plugins downgrade fd filelight findutils fzf git --noconfirm
 
 pacman -S gnome-calculator gtk-engine-murrine telegram-desktop gvfs gvfs-afc gvfs-mtp gvfs-gphoto2 gvfs-smb --noconfirm
 
