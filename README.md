@@ -7,6 +7,7 @@ chmod +x arch-kde
 
 ./arch-kde
 
+----------------------------------------------------
 Установка Arch Linux XFCE:
 
 https://github.com/alexgantera/arch/tree/branch-xfce
