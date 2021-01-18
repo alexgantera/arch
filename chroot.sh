@@ -157,7 +157,7 @@ do
     :
 done
 if [[ $i_grub == 2 ]]; then
-pacman -S grub   --noconfirm
+pacman -S grub --noconfirm
 lsblk -f
 read -p "Укажите диск куда установить GRUB (sda/sdb): " x_boot
 grub-install /dev/$x_boot
@@ -206,7 +206,7 @@ pacman -Sy plasma kde-system-meta kio-extras konsole yakuake htop dkms --noconfi
 
 pacman -S alsa-utils ark aspell aspell-en aspell-ru audacious audacious-plugins bat bind bleachbit dnsmasq --noconfirm
 
-pacman -S dolphin-plugins downgrade fd filelight findutils firefox-i18n-ru firefox-ublock-origin fish fzf git --noconfirm
+pacman -S dolphin-plugins downgrade fd filelight findutils firefox-i18n-ru fish fzf git --noconfirm
 
 pacman -S gnome-calculator grsync gtk-engine-murrine gvfs gwenview haveged highlight kfind lib32-alsa-plugins --noconfirm
 
