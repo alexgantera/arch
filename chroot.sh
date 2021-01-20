@@ -280,13 +280,6 @@ systemctl enable NetworkManager.service
 clear
 echo ""
 
-cd /home/$username
-git clone https://aur.archlinux.org/pamac-tray-icon-plasma
-chown -R $username:users /home/$username/pamac-tray-icon-plasma
-chown -R $username:users /home/$username/pamac-tray-icon-plasma/PKGBUILD
-cd /home/$username/pamac-tray-icon-plasma
-sudo -u $username makepkg -si --noconfirm
-rm -Rf /home/$username/pamac-tray-icon-plasma
 echo "  Установка  программ закончена"
 
 echo ""
