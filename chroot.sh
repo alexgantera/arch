@@ -229,7 +229,7 @@ clear
 echo " Установка драйверов AMDGPU "
 
 pacman -S libva-mesa-driver lib32-libva-mesa-driver mesa-vdpau lib32-mesa-vdpau --noconfirm
-pacman -S lib32-vulkan-icd-loader vulkan-radeon lib32-vulkan-radeon --noconfirm
+pacman -S lib32-vulkan-icd-loader amdvlk lib32-amdvlk --noconfirm
 
 clear
 
@@ -283,17 +283,10 @@ echo ""
 echo "  Установка  программ закончена"
 
 echo ""
-# clear
-# pacman -S zsh zsh-completions zsh-syntax-highlighting zsh-autosuggestions grml-zsh-config --noconfirm
-# echo 'source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh' >> /etc/zsh/zshrc
-# echo 'source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh' >> /etc/zsh/zshrc
-# # echo 'prompt adam2' >> /etc/zsh/zshrc
-# clear
 
 chsh -s /bin/fish
 chsh -s /bin/fish $username
 clear
-# echo " при первом запуске консоли(терминала) нажмите "0" "
 
 clear
 
