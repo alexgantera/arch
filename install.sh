@@ -715,8 +715,10 @@ do
 done
 if [[ $int == 1 ]]; then
 
-  wget -P /mnt https://raw.githubusercontent.com/alexgantera/arch/my_kde/chroot.sh
+  curl -LO https://raw.githubusercontent.com/alexgantera/arch/my_kde/chroot.sh
+  mv chroot.sh /mnt
   chmod +x /mnt/chroot.sh
+
   echo 'первый этап готов '
   echo 'ARCH-LINUX chroot'
   echo '1. проверь  интернет для продолжения установки в черуте || 2.команда для запуска ./chroot.sh '
