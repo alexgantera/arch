@@ -471,11 +471,11 @@ do
 done
 if [[ $vm_text == 0 ]]; then
   echo 'этап пропущен'
- exit
+  exit
 elif [[ $vm_text == 1 ]]; then
   mkdir /home/$username/{Downloads,Music,Pictures,Videos,Documents}
   chown -R $username:users  /home/$username/{Downloads,Music,Pictures,Videos,Documents}
-exit
+  exit
 fi
 clear
 echo " Установка завершена для выхода введите >> exit << "
