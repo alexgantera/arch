@@ -226,6 +226,10 @@ pacman -S ttf-dejavu ttf-liberation ttf-sazanami unrar xclip xorg-xrandr xreader
 
 clear
 
+echo " Установка pipewire-pulse и pipewire-alsa "
+pacman -S pipewire-pulse pipewire-alsa
+clear
+
 echo " Установка драйверов AMDGPU "
 
 pacman -S libva-mesa-driver lib32-libva-mesa-driver mesa-vdpau lib32-mesa-vdpau --noconfirm
