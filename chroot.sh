@@ -218,7 +218,7 @@ pacman -S noto-fonts-emoji p7zip pamac-aur partitionmanager pcmanfm perl-image-e
 
 pacman -S plasma5-applets-weather-widget pulseaudio-alsa python-pip python-virtualenv qbittorrent --noconfirm
 
-pacman -S qt5-xmlpatterns smplayer smplayer-themes sox spectacle starship systemd-kcm telegram-desktop --noconfirm
+pacman -S qt5-xmlpatterns smplayer smplayer-themes sox spectacle starship systemd-kcm --noconfirm
 
 pacman -S terminus-font timeshift ttf-arphic-ukai ttf-arphic-uming ttf-caladea ttf-carlito ttf-croscore --noconfirm
 
