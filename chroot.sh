@@ -237,7 +237,8 @@ echo " Установка драйверов AMDGPU "
 
 clear
 
-pacman -Rns bluedevil discover plasma-thunderbolt bolt --noconfirm
+pacman -Rns bluedevil discover plasma-thunderbolt bolt plasma-firewall --noconfirm
+
 
 wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/arc-kde/master/install.sh | sh
 
