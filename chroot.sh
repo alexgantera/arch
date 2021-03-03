@@ -280,7 +280,7 @@ do
     :
 done
 if [[ $i_grub == 2 ]]; then
-pacman -S grub   --noconfirm
+pacman -S grub --noconfirm
 lsblk -f
 read -p "Укажите диск куда установить GRUB (sda/sdb): " x_boot
 grub-install /dev/$x_boot
@@ -335,7 +335,7 @@ pacman -S alsa-utils ark aspell aspell-en aspell-ru audacious audacious-plugins 
 
 pacman -S firefox-i18n-ru dnsmasq dolphin-plugins downgrade fd filelight findutils fzf git --noconfirm
 
-pacman -S gnome-calculator gtk-engine-murrine telegram-desktop gvfs gvfs-afc gvfs-mtp gvfs-gphoto2 gvfs-smb --noconfirm
+pacman -S gnome-calculator gtk-engine-murrine telegram-desktop gvfs gvfs-afc gvfs-mtp gvfs-gphoto2 --noconfirm
 
 pacman -S gwenview haveged highlight kfind lib32-alsa-plugins lib32-freetype2 lib32-glu lib32-libcurl-gnutls --noconfirm
 
@@ -343,7 +343,7 @@ pacman -S lib32-libpulse lib32-libxft lib32-libxinerama lib32-libxrandr lib32-op
 
 pacman -S lib32-sdl2_mixer ntfs-3g nano-syntax-highlighting neofetch noto-fonts-emoji okular perl-image-exiftool --noconfirm
 
-pacman -S partitionmanager pcmanfm pkgfile p7zip pulseaudio-alsa python-pip python-virtualenv --noconfirm
+pacman -S partitionmanager pcmanfm pkgfile p7zip pulseaudio-alsa --noconfirm
 
 pacman -S pamac-aur qbittorrent plasma5-applets-weather-widget qt5-xmlpatterns systemd-kcm --noconfirm
 
@@ -374,7 +374,6 @@ When = PostTransaction
 Exec = /usr/bin/paccache -rvk0" >> /usr/share/libalpm/hooks/cleanup.hook
 echo "Хук добавлен "
 clear
-echo " "
 echo " "
 
 grub-mkfont -s 16 -o /boot/grub/ter-u16b.pf2 /usr/share/fonts/misc/ter-u16b.otb
