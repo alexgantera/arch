@@ -44,7 +44,7 @@ do
 done
  if [[ $x_key == 1 ]]; then
   clear
-  pacman-key --populate archlinux
+  echo "keyserver hkp://keyserver.ubuntu.com" >> /etc/pacman.d/gnupg/gpg.conf
   pacman-key --refresh-keys
   elif [[ $x_key == 0 ]]; then
    echo " Обновление ключей пропущено "
