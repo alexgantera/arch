@@ -23,32 +23,14 @@ done
   clear
   echo "Добро пожаловать в установку ArchLinux"
   elif [[ $hello == 0 ]]; then
-   exit
+  exit
 fi
 ###
 echo ""
-echo "
-Данный этап поможет вам избежать проблем с ключами Pacmаn"
-
-echo ""
-echo " Обновим ключи?  "
-while
-    read -n1 -p  "
-    1 - да
-
-    0 - нет: " x_key
-    echo ''
-    [[ "$x_key" =~ [^10] ]]
-do
-    :
-done
- if [[ $x_key == 1 ]]; then
-  clear
-  echo "keyserver hkp://keyserver.ubuntu.com" >> /etc/pacman.d/gnupg/gpg.conf
-  pacman-key --refresh-keys
-  elif [[ $x_key == 0 ]]; then
-   echo " Обновление ключей пропущено "
-fi
+echo " Обновление ключей "
+clear
+echo "keyserver hkp://keyserver.ubuntu.com" >> /etc/pacman.d/gnupg/gpg.conf
+pacman-key --refresh-keys
 ##
 clear
 echo " Здесь выбирайте то каким режимом запущен установочный образ ArchLinux"
