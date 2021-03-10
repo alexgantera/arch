@@ -214,7 +214,7 @@ pacman -S lib32-freetype2 lib32-glu lib32-libcurl-gnutls lib32-libpulse lib32-li
 
 pacman -S lib32-libxrandr lib32-openal lib32-openssl-1.0 lib32-sdl2_mixer nano-syntax-highlighting neofetch --noconfirm
 
-pacman -S noto-fonts-emoji p7zip pamac-aur partitionmanager pcmanfm perl-image-exiftool pkgfile --noconfirm
+pacman -S noto-fonts-emoji p7zip pamac-aur partitionmanager pcmanfm perl-image-exiftool pkgfile xdg-desktop-portal --noconfirm
 
 pacman -S plasma5-applets-weather-widget pulseaudio-alsa python-pip python-virtualenv qbittorrent --noconfirm
 
