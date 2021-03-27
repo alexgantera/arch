@@ -220,7 +220,7 @@ pacman -S plasma5-applets-weather-widget pulseaudio-alsa python-pip python-virtu
 
 pacman -S qt5-xmlpatterns smplayer smplayer-themes sox spectacle starship systemd-kcm telegram-desktop --noconfirm
 
-pacman -S terminus-font timeshift ttf-arphic-ukai ttf-arphic-uming ttf-caladea ttf-carlito ttf-croscore --noconfirm
+pacman -S terminus-font timeshift ttf-arphic-ukai ttf-arphic-uming ttf-caladea ttf-carlito ttf-croscore ttf-inconsolata --noconfirm
 
 pacman -S ttf-dejavu ttf-liberation ttf-sazanami unrar xclip xorg-xrandr foliate epdfview yay youtube-dl zim expac --noconfirm
 
