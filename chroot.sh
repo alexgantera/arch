@@ -206,7 +206,7 @@ pacman -Sy plasma kde-system-meta kio-extras konsole yakuake htop dkms --noconfi
 
 pacman -S alsa-utils ark aspell aspell-en aspell-ru audacious audacious-plugins bat bind bleachbit --noconfirm
 
-pacman -S dolphin-plugins downgrade fd filelight findutils firefox-i18n-ru firefox meld --noconfirm
+pacman -S dolphin-plugins downgrade fd filelight findutils meld --noconfirm
 
 pacman -S fish fzf git gnome-calculator grsync gtk-engine-murrine gvfs gwenview haveged highlight kfind lib32-alsa-plugins --noconfirm
 
@@ -227,14 +227,14 @@ pacman -S ttf-dejavu ttf-liberation ttf-sazanami unrar xclip xorg-xrandr foliate
 clear
 
 echo " Установка pipewire-pulse и pipewire-alsa "
-pacman -S pipewire-pulse pipewire-alsa
+yes | pacman -S pipewire-pulse pipewire-alsa
 clear
 
 echo " Установка драйверов AMDGPU "
 
 #pacman -S libva-mesa-driver lib32-libva-mesa-driver mesa-vdpau lib32-mesa-vdpau --noconfirm
 #pacman -S lib32-vulkan-icd-loader amdvlk lib32-amdvlk --noconfirm
-
+pacman -S libva-mesa-driver lib32-libva-mesa-driver mesa-vdpau lib32-mesa-vdpau lib32-vulkan-icd-loader amdvlk lib32-amdvlk --noconfirm
 clear
 
 pacman -Rns bluedevil discover plasma-thunderbolt bolt plasma-firewall --noconfirm
