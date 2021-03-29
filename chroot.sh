@@ -188,7 +188,7 @@ echo '[multilib]' >> /etc/pacman.conf
 echo 'Include = /etc/pacman.d/mirrorlist' >> /etc/pacman.conf
 echo " Multilib репозиторий добавлен"
 ######
-pacman -Sy xorg-server xorg-drivers --noconfirm
+pacman -Sy xorg-server xf86-video-amdgpu --noconfirm
 clear
 
 echo "Добавление репозитория Archlinuxcn"
