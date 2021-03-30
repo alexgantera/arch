@@ -224,6 +224,8 @@ pacman -S terminus-font timeshift ttf-arphic-ukai ttf-arphic-uming ttf-caladea t
 
 pacman -S ttf-dejavu ttf-liberation ttf-sazanami unrar xclip xorg-xrandr foliate epdfview yay youtube-dl zim expac --noconfirm
 
+systemctl enable numLockOnTty.service
+
 clear
 
 echo " Установка pipewire-pulse и pipewire-alsa "
@@ -260,6 +262,8 @@ clear
 echo " "
 
 grub-mkfont -s 16 -o /boot/grub/ter-u16b.pf2 /usr/share/fonts/misc/ter-u16b.otb
+grub-mkfont -s 18 -o /boot/grub/ter-u16b.pf2 /usr/share/fonts/misc/ter-u18b.otb
+
 grub-mkconfig -o /boot/grub/grub.cfg
 clear
 pacman -S xorg-xinit --noconfirm
