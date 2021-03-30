@@ -41,7 +41,7 @@ echo "ru_RU.UTF-8 UTF-8" >> /etc/locale.gen
 locale-gen
 echo 'LANG="ru_RU.UTF-8"' > /etc/locale.conf
 echo "KEYMAP=ru" >> /etc/vconsole.conf
-echo "FONT=cyr-sun16" >> /etc/vconsole.conf
+echo "FONT=ter-u16b" >> /etc/vconsole.conf
 echo ""
 echo " Укажите пароль для ROOT "
 passwd
@@ -262,7 +262,7 @@ clear
 echo " "
 
 grub-mkfont -s 16 -o /boot/grub/ter-u16b.pf2 /usr/share/fonts/misc/ter-u16b.otb
-grub-mkfont -s 18 -o /boot/grub/ter-u16b.pf2 /usr/share/fonts/misc/ter-u18b.otb
+grub-mkfont -s 18 -o /boot/grub/ter-u18b.pf2 /usr/share/fonts/misc/ter-u18b.otb
 
 grub-mkconfig -o /boot/grub/grub.cfg
 clear
