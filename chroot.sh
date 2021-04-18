@@ -318,7 +318,7 @@ if [[ $vm_cpset == 0 ]]; then
 elif [[ $vm_cpset == 1 ]]; then
 
 rm -r /root
-#rm -r /usr/share/icons
+rm -r /usr/share/icons
 rm -r /usr/share/sddm
 
 cd /home/$username/system/
