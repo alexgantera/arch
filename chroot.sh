@@ -318,11 +318,11 @@ if [[ $vm_cpset == 0 ]]; then
 elif [[ $vm_cpset == 1 ]]; then
 
 rm -r /root
-rm -r /usr/share/icons
+#rm -r /usr/share/icons
 rm -r /usr/share/sddm
 
 cd /home/$username/system/
-rsync -r -t -v --progress -l -s etc --exclude=fonts /
+rsync -r -t -v --progress -l -s etc /
 rsync -r -t -v --progress -l -s root /
 rsync -r -t -v --progress -l -s icons /usr/share
 rsync -r -t -v --progress -l -s sddm /usr/share
