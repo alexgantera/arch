@@ -206,7 +206,7 @@ pacman -Sy plasma kde-system-meta kio-extras konsole yakuake htop dkms --noconfi
 
 pacman -S alsa-utils ark aspell aspell-en aspell-ru audacious audacious-plugins bat bind bleachbit --noconfirm
 
-pacman -S dolphin-plugins downgrade fd filelight findutils meld systemd-numlockontty google-chrome --noconfirm
+pacman -S dolphin-plugins downgrade fd filelight findutils meld systemd-numlockontty firefox firefox-i18n-ru --noconfirm
 
 pacman -S fish fzf git gnome-calculator grsync gtk-engine-murrine gvfs gwenview haveged highlight kfind lib32-alsa-plugins --noconfirm
 
@@ -242,7 +242,7 @@ clear
 pacman -Rns bluedevil discover plasma-thunderbolt bolt plasma-firewall --noconfirm
 
 
-wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/arc-kde/master/install.sh | sh
+#wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/arc-kde/master/install.sh | sh
 
 
 echo "Добавление хука автоматической очистки кэша pacman "
