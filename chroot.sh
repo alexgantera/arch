@@ -334,7 +334,7 @@ pacman -S bind bleachbit firefox-i18n-ru dnsmasq downgrade fd findutils fzf git 
 
 pacman -S gnome-calculator gtk-engine-murrine telegram-desktop gvfs gvfs-afc gvfs-gphoto2 --noconfirm
 
-pacman -S gvfs-mtp haveged highlight kfind --noconfirm
+pacman -S gvfs-mtp haveged highlight kfind engrampa --noconfirm
 
 pacman -S lib32-alsa-plugins lib32-freetype2 lib32-glu lib32-libcurl-gnutls lib32-libpulse lib32-libxft --noconfirm
 
