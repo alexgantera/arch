@@ -315,7 +315,7 @@ clear
 
 echo "Добавление репозитория Archlinuxcn"
 echo '[archlinuxcn]' >> /etc/pacman.conf
-echo 'Server = https://mirror.xtom.nl/archlinuxcn/$arch' >> /etc/pacman.conf
+echo 'Server = http://repo.archlinuxcn.org/$arch' >> /etc/pacman.conf
 
 pacman -Syy archlinuxcn-keyring --noconfirm
 clear
