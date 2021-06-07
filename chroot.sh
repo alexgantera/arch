@@ -216,7 +216,7 @@ pacman -S lib32-libxrandr lib32-openal lib32-openssl-1.0 lib32-sdl2_mixer nano-s
 
 pacman -S noto-fonts-emoji p7zip pamac-aur partitionmanager pcmanfm perl-image-exiftool pkgfile xdg-desktop-portal --noconfirm
 
-pacman -S plasma5-applets-weather-widget pulseaudio-alsa python-pip python-virtualenv qbittorrent --noconfirm
+pacman -S plasma5-applets-weather-widget python-pip python-virtualenv keepassxc qbittorrent --noconfirm
 
 pacman -S qt5-xmlpatterns smplayer smplayer-themes sox spectacle starship systemd-kcm telegram-desktop --noconfirm
 
