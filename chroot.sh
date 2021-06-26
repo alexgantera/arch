@@ -195,7 +195,7 @@ echo "Добавление репозитория Archlinuxcn"
 echo '[archlinuxcn]' >> /etc/pacman.conf
 echo 'Server = http://repo.archlinuxcn.org/$arch' >> /etc/pacman.conf
 
-pacman -Syy archlinuxcn-keyring --noconfirm
+pacman -Sy archlinuxcn-keyring --noconfirm
 clear
 
 echo " Установка KDE и набора программ "
