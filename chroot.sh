@@ -191,11 +191,10 @@ echo " Multilib репозиторий добавлен"
 pacman -Sy xorg-server xf86-video-amdgpu --noconfirm
 clear
 
-#echo "Добавление репозитория Archlinuxcn"
-#echo '[archlinuxcn]' >> /etc/pacman.conf
-#echo 'Server = http://repo.archlinuxcn.org/$arch' >> /etc/pacman.conf
-#
-#pacman -Syy archlinuxcn-keyring --noconfirm
+echo "Добавление репозитория Archlinuxcn"
+echo '[archlinuxcn]' >> /etc/pacman.conf
+echo 'Server = http://repo.archlinuxcn.org/$arch' >> /etc/pacman.conf
+pacman -Sy archlinuxcn-keyring --noconfirm
 clear
 
 echo " Установка KDE и набора программ "
@@ -224,9 +223,10 @@ pacman -S terminus-font ttf-arphic-ukai ttf-arphic-uming ttf-caladea ttf-carlito
 
 pacman -S ttf-dejavu ttf-liberation ttf-sazanami unrar xclip xorg-xrandr foliate epdfview youtube-dl zim expac grub-btrfs --noconfirm
 
-#downgrade duf yay timeshift systemd-numlockontty
 
-#systemctl enable numLockOnTty.service
+pacman -S downgrade duf yay timeshift systemd-numlockontty --noconfirm
+
+systemctl enable numLockOnTty.service
 
 clear
 
