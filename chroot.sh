@@ -191,11 +191,11 @@ echo " Multilib репозиторий добавлен"
 pacman -Sy xorg-server xf86-video-amdgpu --noconfirm
 clear
 
-echo "Добавление репозитория Archlinuxcn"
-echo '[archlinuxcn]' >> /etc/pacman.conf
-echo 'Server = http://repo.archlinuxcn.org/$arch' >> /etc/pacman.conf
-
-pacman -Syy archlinuxcn-keyring --noconfirm
+#echo "Добавление репозитория Archlinuxcn"
+#echo '[archlinuxcn]' >> /etc/pacman.conf
+#echo 'Server = http://repo.archlinuxcn.org/$arch' >> /etc/pacman.conf
+#
+#pacman -Syy archlinuxcn-keyring --noconfirm
 clear
 
 echo " Установка KDE и набора программ "
@@ -206,7 +206,7 @@ pacman -Sy plasma kde-system-meta kio-extras konsole yakuake htop dkms --noconfi
 
 pacman -S alsa-utils ark aspell aspell-en aspell-ru audacious audacious-plugins bat bind bleachbit --noconfirm
 
-pacman -S dolphin-plugins downgrade fd filelight findutils meld systemd-numlockontty --noconfirm
+pacman -S dolphin-plugins fd filelight findutils meld firefox firefox-i18n-ru --noconfirm
 
 pacman -S fish fzf git gnome-calculator grsync gtk-engine-murrine gvfs gwenview haveged highlight kfind lib32-alsa-plugins --noconfirm
 
@@ -214,17 +214,19 @@ pacman -S lib32-freetype2 lib32-glu lib32-libcurl-gnutls lib32-libpulse lib32-li
 
 pacman -S lib32-libxrandr lib32-openal lib32-openssl-1.0 lib32-sdl2_mixer nano-syntax-highlighting neofetch --noconfirm
 
-pacman -S noto-fonts-emoji p7zip pamac-aur partitionmanager pcmanfm perl-image-exiftool pkgfile xdg-desktop-portal --noconfirm
+pacman -S noto-fonts-emoji p7zip partitionmanager pcmanfm perl-image-exiftool pkgfile xdg-desktop-portal --noconfirm
 
-pacman -S plasma5-applets-weather-widget pulseaudio-alsa python-pip python-virtualenv qbittorrent --noconfirm
+pacman -S plasma5-applets-weather-widget python-pip python-virtualenv qbittorrent --noconfirm
 
 pacman -S qt5-xmlpatterns smplayer smplayer-themes sox spectacle starship systemd-kcm telegram-desktop --noconfirm
 
-pacman -S terminus-font timeshift ttf-arphic-ukai ttf-arphic-uming ttf-caladea ttf-carlito ttf-croscore --noconfirm
+pacman -S terminus-font ttf-arphic-ukai ttf-arphic-uming ttf-caladea ttf-carlito ttf-croscore --noconfirm
 
-pacman -S ttf-dejavu ttf-liberation ttf-sazanami unrar xclip xorg-xrandr foliate epdfview yay youtube-dl zim expac --noconfirm
+pacman -S ttf-dejavu ttf-liberation ttf-sazanami unrar xclip xorg-xrandr foliate epdfview youtube-dl zim expac grub-btrfs --noconfirm
 
-systemctl enable numLockOnTty.service
+#downgrade duf yay timeshift systemd-numlockontty
+
+#systemctl enable numLockOnTty.service
 
 clear
 
@@ -242,7 +244,7 @@ clear
 pacman -Rns bluedevil discover plasma-thunderbolt bolt plasma-firewall --noconfirm
 
 
-wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/arc-kde/master/install.sh | sh
+#wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/arc-kde/master/install.sh | sh
 
 
 echo "Добавление хука автоматической очистки кэша pacman "
@@ -322,9 +324,12 @@ rm -r /root
 rm -r /usr/share/sddm
 
 cd /home/$username/system/
-rsync -r -t -v --progress -l -s etc root /
+rsync -r -t -v --progress -l -s etc /
+rsync -r -t -v --progress -l -s root /
 rsync -r -t -v --progress -l -s icons /usr/share
 rsync -r -t -v --progress -l -s sddm /usr/share
+rsync -r -t -v --progress -l -s pipewire /usr/share
+
 
 fi
 
