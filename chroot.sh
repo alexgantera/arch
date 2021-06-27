@@ -236,7 +236,7 @@ pacman -S qt5-xmlpatterns smplayer smplayer-themes sox spectacle starship telegr
 
 pacman -S terminus-font ttf-arphic-ukai ttf-arphic-uming ttf-caladea ttf-carlito ttf-croscore --noconfirm
 
-pacman -S ttf-dejavu ttf-liberation ttf-sazanami unrar xclip xorg-xrandr foliate epdfview youtube-dl zim expac grub-btrfs --noconfirm
+pacman -S ttf-dejavu ttf-liberation ttf-sazanami unrar xclip xorg-xrandr foliate epdfview youtube-dl zim expac --noconfirm
 
 
 # pacman -S systemd-kcm downgrade duf yay timeshift systemd-numlockontty --noconfirm
