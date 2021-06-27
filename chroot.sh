@@ -191,6 +191,21 @@ echo " Multilib репозиторий добавлен"
 pacman -Sy xorg-server xf86-video-amdgpu --noconfirm
 clear
 
+echo "Добавление хука автоматической очистки кэша pacman "
+echo "[Trigger]
+Operation = Remove
+Operation = Install
+Operation = Upgrade
+Type = Package
+Target = *
+
+[Action]
+Description = Removing unnecessary cached files…
+When = PostTransaction
+Exec = /usr/bin/paccache -rvk0" >> /usr/share/libalpm/hooks/cleanup.hook
+echo "Хук добавлен "
+clear
+echo " "
 # echo "Добавление репозитория Archlinuxcn"
 # echo '[archlinuxcn]' >> /etc/pacman.conf
 # echo 'Server = http://repo.archlinuxcn.org/$arch' >> /etc/pacman.conf
@@ -246,22 +261,6 @@ pacman -Rns bluedevil discover plasma-thunderbolt bolt plasma-firewall --noconfi
 
 #wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/arc-kde/master/install.sh | sh
 
-
-echo "Добавление хука автоматической очистки кэша pacman "
-echo "[Trigger]
-Operation = Remove
-Operation = Install
-Operation = Upgrade
-Type = Package
-Target = *
-
-[Action]
-Description = Removing unnecessary cached files…
-When = PostTransaction
-Exec = /usr/bin/paccache -rvk0" >> /usr/share/libalpm/hooks/cleanup.hook
-echo "Хук добавлен "
-clear
-echo " "
 
 grub-mkfont -s 16 -o /boot/grub/ter-u16b.pf2 /usr/share/fonts/misc/ter-u16b.otb
 grub-mkfont -s 18 -o /boot/grub/ter-u18b.pf2 /usr/share/fonts/misc/ter-u18b.otb
