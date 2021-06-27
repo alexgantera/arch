@@ -191,11 +191,11 @@ echo " Multilib репозиторий добавлен"
 pacman -Sy xorg-server xf86-video-amdgpu --noconfirm
 clear
 
-echo "Добавление репозитория Archlinuxcn"
-echo '[archlinuxcn]' >> /etc/pacman.conf
-echo 'Server = http://repo.archlinuxcn.org/$arch' >> /etc/pacman.conf
-pacman -Sy archlinuxcn-keyring --noconfirm
-clear
+# echo "Добавление репозитория Archlinuxcn"
+# echo '[archlinuxcn]' >> /etc/pacman.conf
+# echo 'Server = http://repo.archlinuxcn.org/$arch' >> /etc/pacman.conf
+# pacman -Sy archlinuxcn-keyring --noconfirm
+# clear
 
 echo " Установка KDE и набора программ "
 
@@ -217,16 +217,16 @@ pacman -S noto-fonts-emoji p7zip partitionmanager pcmanfm perl-image-exiftool pk
 
 pacman -S plasma5-applets-weather-widget python-pip python-virtualenv qbittorrent --noconfirm
 
-pacman -S qt5-xmlpatterns smplayer smplayer-themes sox spectacle starship systemd-kcm telegram-desktop --noconfirm
+pacman -S qt5-xmlpatterns smplayer smplayer-themes sox spectacle starship telegram-desktop --noconfirm
 
 pacman -S terminus-font ttf-arphic-ukai ttf-arphic-uming ttf-caladea ttf-carlito ttf-croscore --noconfirm
 
 pacman -S ttf-dejavu ttf-liberation ttf-sazanami unrar xclip xorg-xrandr foliate epdfview youtube-dl zim expac grub-btrfs --noconfirm
 
 
-pacman -S downgrade duf yay timeshift systemd-numlockontty --noconfirm
+# pacman -S systemd-kcm downgrade duf yay timeshift systemd-numlockontty --noconfirm
 
-systemctl enable numLockOnTty.service
+# systemctl enable numLockOnTty.service
 
 clear
 
