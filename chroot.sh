@@ -315,7 +315,7 @@ clear
 
 echo "Добавление репозитория Archlinuxcn"
 echo '[archlinuxcn]' >> /etc/pacman.conf
-echo 'Server = http://repo.archlinuxcn.org/$arch' >> /etc/pacman.conf
+echo 'Server = https://mirror.xtom.nl/archlinuxcn/$arch' >> /etc/pacman.conf
 
 pacman -Syy archlinuxcn-keyring --noconfirm
 clear
@@ -354,7 +354,7 @@ pacman -S ttf-arphic-ukai ttf-arphic-uming ttf-caladea ttf-carlito ttf-croscore 
 pacman -S ttf-liberation ttf-sazanami unrar xclip xorg-xrandr zim yay youtube-dl starship --noconfirm
 
 
-pacman -Rns discover plasma-thunderbolt bolt --noconfirm
+pacman -Rns discover --noconfirm
 
 echo "Для отображения иконки Pamac в трее нужно будет установить пакет pamac-tray-icon-plasma "
 
