@@ -328,6 +328,7 @@ rsync -r -t -v --progress -l -s root /
 rsync -r -t -v --progress -l -s icons /usr/share
 rsync -r -t -v --progress -l -s sddm /usr/share
 rsync -r -t -v --progress -l -s pipewire /usr/share
+rsync -r -t -v --progress -l -s alsa-card-profile /usr/share
 
 
 fi
