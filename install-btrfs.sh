@@ -27,11 +27,11 @@ done
 fi
 ###
 echo ""
-echo " Обновление ключей "
+#echo " Обновление ключей "
 clear
 pacman -Syy
 #echo "keyserver hkp://keyserver.ubuntu.com" >> /etc/pacman.d/gnupg/gpg.conf
-pacman-key --refresh-keys
+#pacman-key --refresh-keys
 ##
 
 echo "Добро пожаловать в установку ArchLinux режим GRUB-Legacy "
