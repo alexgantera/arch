@@ -226,7 +226,7 @@ pacman -S fish fzf git gnome-calculator grsync gtk-engine-murrine gvfs gwenview 
 
 pacman -S lib32-freetype2 lib32-glu lib32-libcurl-gnutls lib32-libpulse lib32-libxft lib32-libxinerama --noconfirm
 
-pacman -S lib32-libxrandr lib32-openal lib32-openssl-1.0 lib32-sdl2_mixer nano-syntax-highlighting neofetch --noconfirm
+pacman -S lib32-libxrandr lib32-openal lib32-openssl-1.0 lib32-sdl2_mixer nano-syntax-highlighting --noconfirm
 
 pacman -S noto-fonts-emoji p7zip partitionmanager pcmanfm perl-image-exiftool pkgfile xdg-desktop-portal --noconfirm
 
