@@ -10,3 +10,4 @@ sudo rsync -r -t -v --progress -l -s /usr/share/icons/Qogir-white-cursors system
 sudo rsync -r -t -v --progress -l -s /usr/share/pipewire system
 sudo rsync -r -t -v --progress -l -s /usr/share/sddm system
 sudo rsync -r -t -v --progress -l -s /usr/share/alsa-card-profile system
+sudo rsync -r -t -v --progress -l -s /var/spool/cron
