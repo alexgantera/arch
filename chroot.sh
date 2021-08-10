@@ -220,7 +220,7 @@ pacman -Sy plasma kde-system-meta kio-extras konsole yakuake htop dkms --noconfi
 
 pacman -S alsa-utils ark aspell aspell-en aspell-ru audacious audacious-plugins bat bind bleachbit --noconfirm
 
-pacman -S dolphin-plugins fd filelight findutils meld --noconfirm
+pacman -S dolphin-plugins fd filelight findutils meld firefox firefox-i18n-ru--noconfirm
 
 pacman -S fish fzf git gnome-calculator grsync gtk-engine-murrine gvfs gwenview haveged highlight kfind lib32-alsa-plugins --noconfirm
 
@@ -232,11 +232,11 @@ pacman -S noto-fonts-emoji p7zip partitionmanager pcmanfm perl-image-exiftool pk
 
 pacman -S plasma5-applets-weather-widget python-pip python-virtualenv qbittorrent --noconfirm
 
-pacman -S qt5-xmlpatterns smplayer smplayer-themes sox spectacle starship telegram-desktop --noconfirm
+pacman -S smplayer smplayer-themes sox spectacle starship telegram-desktop --noconfirm
 
 pacman -S terminus-font ttf-arphic-ukai ttf-arphic-uming ttf-caladea ttf-carlito ttf-croscore --noconfirm
 
-pacman -S ttf-dejavu ttf-liberation ttf-sazanami unrar xclip xorg-xrandr foliate epdfview youtube-dl zim expac --noconfirm
+pacman -S ttf-dejavu ttf-liberation ttf-sazanami unrar xclip xorg-xrandr foliate xreader youtube-dl zim expac --noconfirm
 
 
 # pacman -S systemd-kcm downgrade duf yay timeshift systemd-numlockontty --noconfirm
@@ -248,7 +248,7 @@ clear
 echo " Установка pipewire-pulse и pipewire-alsa "
 yes | pacman -S pipewire-pulse pipewire-alsa
 clear
-
+fire
 echo " Установка драйверов AMDGPU "
 
 #pacman -S libva-mesa-driver lib32-libva-mesa-driver mesa-vdpau lib32-mesa-vdpau --noconfirm
