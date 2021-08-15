@@ -253,7 +253,7 @@ echo " Установка драйверов AMDGPU "
 
 #pacman -S libva-mesa-driver lib32-libva-mesa-driver mesa-vdpau lib32-mesa-vdpau --noconfirm
 #pacman -S lib32-vulkan-icd-loader amdvlk lib32-amdvlk --noconfirm
-pacman -S libva-mesa-driver lib32-libva-mesa-driver mesa-vdpau lib32-mesa-vdpau lib32-vulkan-icd-loader amdvlk lib32-amdvlk --noconfirm
+pacman -S libva-mesa-driver lib32-libva-mesa-driver mesa-vdpau lib32-mesa-vdpau lib32-vulkan-icd-loader lib32-vulkan-radeon vulkan-radeon --noconfirm
 clear
 
 pacman -Rns bluedevil discover plasma-thunderbolt bolt plasma-firewall --noconfirm
