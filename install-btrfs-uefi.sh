@@ -169,6 +169,7 @@ done
 #   mkdir /mnt/home
 #   mount /dev/$home /mnt/home
     read -p "Укажите HOME раздел(sda/sdb 1.2.3.4 (sda6 например)):" home
+    mkfs.btrfs -f /dev/$home -L Home
     mount /dev/$home /mnt
     btrfs sub cr /mnt/@home
     umount /dev/$home
