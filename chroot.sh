@@ -47,7 +47,7 @@ echo " Укажите пароль для ROOT "
 passwd
 
 echo ""
-useradd -m -g users -G wheel -s /bin/bash $username
+useradd -m -g $username -G wheel -s /bin/bash $username
 echo ""
 echo 'Добавляем пароль для пользователя '$username' '
 echo ""
@@ -131,8 +131,8 @@ echo options root=/dev/$root rw >> /boot/loader/entries/arch.conf
 #
 cd /home/$username
 git clone https://aur.archlinux.org/systemd-boot-pacman-hook.git
-chown -R $username:users /home/$username/systemd-boot-pacman-hook
-chown -R $username:users /home/$username/systemd-boot-pacman-hook/PKGBUILD
+chown -R $username:$username /home/$username/systemd-boot-pacman-hook
+chown -R $username:$username /home/$username/systemd-boot-pacman-hook/PKGBUILD
 cd /home/$username/systemd-boot-pacman-hook
 sudo -u $username makepkg -si --noconfirm
 rm -Rf /home/$username/systemd-boot-pacman-hook
@@ -218,11 +218,11 @@ echo " Установка KDE и набора программ "
 
 pacman -Sy plasma kde-system-meta kio-extras konsole yakuake htop dkms --noconfirm
 
-pacman -S alsa-utils ark aspell aspell-en aspell-ru audacious audacious-plugins bat bind bleachbit --noconfirm
+pacman -S alsa-utils ark aspell aspell-en aspell-ru audacious audacious-plugins bat bind --noconfirm
 
 pacman -S dolphin-plugins grub-btrfs fd filelight findutils meld firefox firefox-i18n-ru--noconfirm
 
-pacman -S fish fzf git gnome-calculator grsync gtk-engine-murrine gvfs gwenview haveged highlight kfind lib32-alsa-plugins --noconfirm
+pacman -S fish fzf git gnome-calculator gtk-engine-murrine gvfs gwenview haveged highlight kfind lib32-alsa-plugins --noconfirm
 
 pacman -S lib32-freetype2 lib32-glu lib32-libcurl-gnutls lib32-libpulse lib32-libxft lib32-libxinerama --noconfirm
 
@@ -269,7 +269,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 clear
 pacman -S xorg-xinit --noconfirm
 cp /etc/X11/xinit/xinitrc /home/$username/.xinitrc
-chown $username:users /home/$username/.xinitrc
+chown $username:$username /home/$username/.xinitrc
 chmod +x /home/$username/.xinitrc
 echo "exec startplasma-x11 " >> /home/$username/.xinitrc
 echo ' [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx ' >> /etc/profile
@@ -323,13 +323,13 @@ rm -r /root
 rm -r /usr/share/sddm
 
 cd /home/$username/system/
-rsync -r -t -v --progress -l -s etc /
-rsync -r -t -v --progress -l -s root /
-rsync -r -t -v --progress -l -s icons /usr/share
-rsync -r -t -v --progress -l -s sddm /usr/share
-rsync -r -t -v --progress -l -s pipewire /usr/share
-rsync -r -t -v --progress -l -s alsa-card-profile /usr/share
-rsync -r -t -v --progress -l -s cron /var/spool
+rsync -r -t -v -a --progress -l -s etc /
+rsync -r -t -v -a --progress -l -s root /
+rsync -r -t -v -a --progress -l -s icons /usr/share
+rsync -r -t -v -a --progress -l -s sddm /usr/share
+rsync -r -t -v -a --progress -l -s pipewire /usr/share
+rsync -r -t -v -a --progress -l -s alsa-card-profile /usr/share
+rsync -r -t -v -a --progress -l -s cron /var/spool
 
 
 fi
@@ -370,7 +370,7 @@ if [[ $vm_text == 0 ]]; then
  exit
 elif [[ $vm_text == 1 ]]; then
   mkdir /home/$username/{Downloads,Music,Pictures,Videos,Documents}
-  chown -R $username:users  /home/$username/{Downloads,Music,Pictures,Videos,Documents}
+  chown -R $username:$username  /home/$username/{Downloads,Music,Pictures,Videos,Documents}
 exit
 fi
 clear
