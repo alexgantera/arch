@@ -242,7 +242,7 @@ sudo pacman -Syy systemd-kcm downgrade duf yay timeshift systemd-numlockontty ve
 
 # pacman -S systemd-kcm downgrade duf yay timeshift systemd-numlockontty --noconfirm
 
-# systemctl enable numLockOnTty.service
+systemctl enable numLockOnTty.service
 
 clear
 
@@ -324,13 +324,13 @@ rm -r /root
 rm -r /usr/share/sddm
 
 cd /home/$username/system/
-rsync -r -t -v -a --progress -l -s etc /
-rsync -r -t -v -a --progress -l -s root /
-rsync -r -t -v -a --progress -l -s icons /usr/share
-rsync -r -t -v -a --progress -l -s sddm /usr/share
-rsync -r -t -v -a --progress -l -s pipewire /usr/share
-rsync -r -t -v -a --progress -l -s alsa-card-profile /usr/share
-rsync -r -t -v -a --progress -l -s cron /var/spool
+rsync -r -t -v --progress -l -s etc /
+rsync -r -t -v --progress -l -s root /
+rsync -r -t -v --progress -l -s icons /usr/share
+rsync -r -t -v --progress -l -s sddm /usr/share
+rsync -r -t -v --progress -l -s pipewire /usr/share
+rsync -r -t -v --progress -l -s alsa-card-profile /usr/share
+rsync -r -t -v  --progress -l -s cron /var/spool
 
 
 fi
