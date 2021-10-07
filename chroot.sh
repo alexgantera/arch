@@ -206,11 +206,11 @@ Exec = /usr/bin/paccache -rvk0" >> /usr/share/libalpm/hooks/cleanup.hook
 echo "Хук добавлен "
 clear
 echo " "
-# echo "Добавление репозитория Archlinuxcn"
-# echo '[archlinuxcn]' >> /etc/pacman.conf
-# echo 'Server = http://repo.archlinuxcn.org/$arch' >> /etc/pacman.conf
-# pacman -Sy archlinuxcn-keyring --noconfirm
-# clear
+ echo "Добавление репозитория Archlinuxcn"
+ echo '[archlinuxcn]' >> /etc/pacman.conf
+ echo 'Server = http://repo.archlinuxcn.org/$arch' >> /etc/pacman.conf
+ pacman -Sy archlinuxcn-keyring --noconfirm
+ clear
 
 echo " Установка KDE и набора программ "
 
@@ -238,6 +238,7 @@ pacman -S terminus-font ttf-arphic-ukai ttf-arphic-uming ttf-caladea ttf-carlito
 
 pacman -S ttf-dejavu ttf-liberation ttf-sazanami unrar xclip xorg-xrandr foliate xreader youtube-dl zim expac --noconfirm
 
+sudo pacman -Syy systemd-kcm downgrade duf yay timeshift systemd-numlockontty ventoy-bin --noconfirm  --overwrite='*'
 
 # pacman -S systemd-kcm downgrade duf yay timeshift systemd-numlockontty --noconfirm
 
