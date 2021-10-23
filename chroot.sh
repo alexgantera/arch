@@ -238,7 +238,7 @@ pacman -S terminus-font ttf-arphic-ukai ttf-arphic-uming ttf-caladea ttf-carlito
 
 pacman -S ttf-dejavu ttf-liberation ttf-sazanami unrar xclip xorg-xrandr foliate xreader youtube-dl zim expac --noconfirm
 
-sudo pacman -Syy systemd-kcm downgrade duf yay timeshift systemd-numlockontty ventoy-bin --noconfirm  --overwrite='*'
+pacman -Syy fastfetch-git downgrade duf yay timeshift systemd-numlockontty ventoy-bin --noconfirm  --overwrite='*'
 
 # pacman -S systemd-kcm downgrade duf yay timeshift systemd-numlockontty --noconfirm
 
