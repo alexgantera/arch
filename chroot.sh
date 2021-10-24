@@ -326,6 +326,8 @@ rm -r /usr/share/sddm
 cd /home/$username/system/
 rsync -r -t -v --progress -l -s etc /
 rsync -r -t -v --progress -l -s root /
+
+rsync -r -t -v --progress -l -s fish /usr/share
 rsync -r -t -v --progress -l -s icons /usr/share
 rsync -r -t -v --progress -l -s sddm /usr/share
 rsync -r -t -v --progress -l -s pipewire /usr/share
