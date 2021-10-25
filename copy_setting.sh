@@ -7,6 +7,7 @@ sudo rsync -r -t -v -a --progress -l -s /usr/share/icons/My_icons system/icons
 sudo rsync -r -t -v -a --progress -l -s /usr/share/icons/default system/icons
 sudo rsync -r -t -v -a --progress -l -s /usr/share/icons/Qogir-white-cursors system/icons
 
+sudo rsync -r -t -v -a --progress -l -s /usr/share/nano system
 sudo rsync -r -t -v -a --progress -l -s /usr/share/fish system
 sudo rsync -r -t -v -a --progress -l -s /usr/share/pipewire system
 sudo rsync -r -t -v -a --progress -l -s /usr/share/sddm system
