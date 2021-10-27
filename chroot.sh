@@ -217,9 +217,9 @@ echo " Установка KDE и набора программ "
 
 # Последний вариант
 
-pacman -Sy plasma kde-system-meta kio-extras konsole yakuake htop dkms --noconfirm
+pacman -Syy plasma kde-system-meta kio-extras konsole yakuake htop dkms --noconfirm
 
-pacman -S alsa-utils ark aspell aspell-en aspell-ru audacious audacious-plugins bat bind rsync dnsmasq --noconfirm
+pacman -S alsa-utils ark aspell aspell-en aspell-ru audacious audacious-plugins bat bind rsync dnsmasq duf --noconfirm
 
 pacman -S dolphin-plugins grub-btrfs fd filelight findutils meld firefox firefox-i18n-ru fish fisher fzf --noconfirm
 
@@ -239,7 +239,7 @@ pacman -S terminus-font ttf-arphic-ukai ttf-arphic-uming ttf-caladea ttf-carlito
 
 pacman -S ttf-dejavu ttf-liberation ttf-sazanami unrar xclip xorg-xrandr foliate xreader youtube-dl zim expac --noconfirm
 
-pacman -Syy fastfetch-git downgrade duf yay timeshift systemd-numlockontty ventoy-bin --noconfirm  --overwrite='*'
+pacman -S fastfetch-git downgrade yay timeshift systemd-numlockontty ventoy-bin --noconfirm
 
 # pacman -S systemd-kcm downgrade duf yay timeshift systemd-numlockontty --noconfirm
 
@@ -250,7 +250,7 @@ clear
 echo " Установка pipewire-pulse и pipewire-alsa "
 yes | pacman -S pipewire-pulse pipewire-alsa
 clear
-fire
+
 echo " Установка драйверов AMDGPU "
 
 #pacman -S libva-mesa-driver lib32-libva-mesa-driver mesa-vdpau lib32-mesa-vdpau --noconfirm
