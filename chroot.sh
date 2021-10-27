@@ -220,9 +220,9 @@ pacman -Sy plasma kde-system-meta kio-extras konsole yakuake htop dkms --noconfi
 
 pacman -S alsa-utils ark aspell aspell-en aspell-ru audacious audacious-plugins bat bind rsync --noconfirm
 
-pacman -S dolphin-plugins grub-btrfs fd filelight findutils meld firefox firefox-i18n-ru --noconfirm
+pacman -S dolphin-plugins grub-btrfs fd filelight findutils meld firefox firefox-i18n-ru fish fisher fzf --noconfirm
 
-pacman -S fish fzf git gnome-calculator gtk-engine-murrine gvfs gwenview haveged highlight kfind lib32-alsa-plugins --noconfirm
+pacman -S tig git gnome-calculator gtk-engine-murrine gvfs gwenview haveged highlight kfind lib32-alsa-plugins --noconfirm
 
 pacman -S lib32-freetype2 lib32-glu lib32-libcurl-gnutls lib32-libpulse lib32-libxft lib32-libxinerama --noconfirm
 
