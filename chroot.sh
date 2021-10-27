@@ -340,6 +340,8 @@ rsync -r -v -a --progress -l cron /var/spool
 
 fi
 
+chattr +i /etc/resolv.conf
+
 mkinitcpio -p linux
 grub-mkconfig -o /boot/grub/grub.cfg
 
