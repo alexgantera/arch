@@ -1,6 +1,9 @@
 #!/bin/bash
+
+timedatectl set-ntp true
+
 loadkeys ru
-setfont ter-u18b
+setfont ter-u16b
 clear
 echo''
 echo "UEFI или Legacy на выбор!"

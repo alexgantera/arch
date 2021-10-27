@@ -325,17 +325,17 @@ rm -r /root
 rm -r /usr/share/sddm
 
 cd /home/$username/system/
-rsync -r -t -v --progress -l -s etc /
-rsync -r -t -v --progress -l -s root /
+rsync -r -v -a --progress -l etc /
+rsync -r -v -a --progress -l root /
 
-rsync -r -t -v --progress -l -s nano /usr/share
-rsync -r -t -v --progress -l -s fish /usr/share
-rsync -r -t -v --progress -l -s icons /usr/share
-rsync -r -t -v --progress -l -s sddm /usr/share
-rsync -r -t -v --progress -l -s pipewire /usr/share
-rsync -r -t -v --progress -l -s nano-syntax-highlighting /usr/share
-rsync -r -t -v --progress -l -s alsa-card-profile /usr/share
-rsync -r -t -v  --progress -l -s cron /var/spool
+rsync -r -v -a --progress -l nano /usr/share
+rsync -r -v -a --progress -l fish /usr/share
+rsync -r -v -a --progress -l icons /usr/share
+rsync -r -v -a --progress -l sddm /usr/share
+rsync -r -v -a --progress -l pipewire /usr/share
+rsync -r -v -a --progress -l nano-syntax-highlighting /usr/share
+rsync -r -v -a --progress -l alsa-card-profile /usr/share
+rsync -r -v -a --progress -l cron /var/spool
 
 
 fi
