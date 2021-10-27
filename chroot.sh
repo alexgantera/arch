@@ -47,6 +47,7 @@ echo " Укажите пароль для ROOT "
 passwd
 
 echo ""
+groupadd $username
 useradd -m -g $username -G wheel -s /bin/bash $username
 echo ""
 echo 'Добавляем пароль для пользователя '$username' '
