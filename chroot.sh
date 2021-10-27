@@ -207,17 +207,17 @@ Exec = /usr/bin/paccache -rvk0" >> /usr/share/libalpm/hooks/cleanup.hook
 echo "Хук добавлен "
 clear
 echo " "
- echo "Добавление репозитория Archlinuxcn"
- echo '[archlinuxcn]' >> /etc/pacman.conf
- echo 'Server = http://repo.archlinuxcn.org/$arch' >> /etc/pacman.conf
- pacman -Sy archlinuxcn-keyring --noconfirm
+#  echo "Добавление репозитория Archlinuxcn"
+#  echo '[archlinuxcn]' >> /etc/pacman.conf
+#  echo 'Server = http://repo.archlinuxcn.org/$arch' >> /etc/pacman.conf
+#  pacman -Sy archlinuxcn-keyring --noconfirm
  clear
 
 echo " Установка KDE и набора программ "
 
 # Последний вариант
 
-pacman -Syy plasma kde-system-meta kio-extras konsole yakuake htop dkms --noconfirm
+pacman -Sy plasma kde-system-meta kio-extras konsole yakuake htop dkms --noconfirm
 
 pacman -S alsa-utils ark aspell aspell-en aspell-ru audacious audacious-plugins bat bind rsync dnsmasq duf --noconfirm
 
@@ -239,7 +239,7 @@ pacman -S terminus-font ttf-arphic-ukai ttf-arphic-uming ttf-caladea ttf-carlito
 
 pacman -S ttf-dejavu ttf-liberation ttf-sazanami unrar xclip xorg-xrandr foliate xreader youtube-dl zim expac --noconfirm
 
-pacman -S fastfetch-git downgrade yay timeshift systemd-numlockontty ventoy-bin --noconfirm
+# pacman -S fastfetch-git downgrade yay timeshift systemd-numlockontty ventoy-bin --noconfirm
 
 # pacman -S systemd-kcm downgrade duf yay timeshift systemd-numlockontty --noconfirm
 
