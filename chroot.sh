@@ -237,7 +237,9 @@ pacman -S kate smplayer smplayer-themes sox spectacle starship telegram-desktop 
 
 pacman -S terminus-font ttf-arphic-ukai ttf-arphic-uming ttf-caladea ttf-carlito ttf-croscore --noconfirm
 
-pacman -S ttf-dejavu ttf-liberation ttf-sazanami unrar xclip xorg-xrandr foliate xreader youtube-dl zim expac --noconfirm
+pacman -S ttf-dejavu ttf-liberation ttf-sazanami unrar xclip xorg-xrandr foliate xreader yt-dlp zim expac --noconfirm
+
+sudo ln -s /usr/bin/yt-dlp /usr/bin/youtube-dl
 
 # pacman -S fastfetch-git downgrade yay timeshift systemd-numlockontty ventoy-bin --noconfirm
 
