@@ -241,9 +241,18 @@ pacman -S ttf-dejavu ttf-liberation ttf-sazanami unrar xclip xorg-xrandr foliate
 
 sudo ln -s /usr/bin/yt-dlp /usr/bin/youtube-dl
 
+echo " "
+ echo "Добавление репозитория Archlinuxcn"
+ echo '[archlinuxcn]' >> /etc/pacman.conf
+ echo 'Server = http://repo.archlinuxcn.org/$arch' >> /etc/pacman.conf
+ pacman -Sy archlinuxcn-keyring --noconfirm
+ clear
+
 # pacman -S fastfetch-git downgrade yay timeshift systemd-numlockontty ventoy-bin --noconfirm
 
 # pacman -S systemd-kcm downgrade duf yay timeshift systemd-numlockontty --noconfirm
+
+sudo pacman -S downgrade yay timeshift systemd-numlockontty ventoy-bin
 
 systemctl enable numLockOnTty.service
 
