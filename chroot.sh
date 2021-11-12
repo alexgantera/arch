@@ -54,7 +54,7 @@ echo 'Добавляем пароль для пользователя '$username
 echo ""
 passwd $username
 echo ""
-echo '%wheel ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
+echo '%wheel ALL=(ALL) ALL' >> /etc/sudoers
 echo ""
 pacman -Syy
 clear
@@ -180,7 +180,6 @@ fi
 mkinitcpio -p linux
 ##########
 echo ""
-echo '%wheel ALL=(ALL) ALL' >> /etc/sudoers
 ###########
 echo ""
 echo ""
