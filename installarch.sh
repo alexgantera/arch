@@ -676,11 +676,11 @@ do
 done
  if [[ $x_pacstrap == 1 ]]; then
   clear
-  pacstrap /mnt base linux linux-headers dhcpcd which netctl inetutils  base-devel  wget linux-firmware  nano wpa_supplicant dialog
+  pacstrap /mnt base linux linux-headers dhcpcd which netctl inetutils pacman-contrib base-devel  wget linux-firmware nano wpa_supplicant dialog
   genfstab -pU /mnt >> /mnt/etc/fstab
 elif [[ $x_pacstrap == 2 ]]; then
   clear
-  pacstrap /mnt base dhcpcd linux linux-headers which netctl inetutils base-devel  wget linux-firmware  nano
+  pacstrap /mnt base dhcpcd linux linux-headers which netctl inetutils base-devel pacman-contrib wget linux-firmware nano
   genfstab -pU /mnt >> /mnt/etc/fstab
 fi
  clear

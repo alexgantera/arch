@@ -170,13 +170,13 @@ echo " Укажите пароль для ROOT "
 passwd
 
 echo ""
-useradd -m -g users -G wheel -s /bin/bash $username
+useradd -m -g $username -G wheel -s /bin/bash $username
 echo ""
 echo 'Добавляем пароль для пользователя '$username' '
 echo ""
 passwd $username
 echo ""
-echo '%wheel ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
+echo '%wheel ALL=(ALL) ALL' >> /etc/sudoers
 echo ""
 pacman -Syy
 clear
@@ -254,8 +254,8 @@ echo options root=/dev/$root rw >> /boot/loader/entries/arch.conf
 #
 cd /home/$username
 git clone https://aur.archlinux.org/systemd-boot-pacman-hook.git
-chown -R $username:users /home/$username/systemd-boot-pacman-hook
-chown -R $username:users /home/$username/systemd-boot-pacman-hook/PKGBUILD
+chown -R $username:$username /home/$username/systemd-boot-pacman-hook
+chown -R $username:$username /home/$username/systemd-boot-pacman-hook/PKGBUILD
 cd /home/$username/systemd-boot-pacman-hook
 sudo -u $username makepkg -si --noconfirm
 rm -Rf /home/$username/systemd-boot-pacman-hook
@@ -312,54 +312,6 @@ echo " Multilib репозиторий добавлен"
 ######
 pacman -Sy xorg-server xorg-drivers --noconfirm
 clear
-
-echo "Добавление репозитория Archlinuxcn"
-echo '[archlinuxcn]' >> /etc/pacman.conf
-echo 'Server = https://mirror.xtom.nl/archlinuxcn/$arch' >> /etc/pacman.conf
-
-pacman -Syy archlinuxcn-keyring --noconfirm
-clear
-
-echo " Установка KDE и набора программ "
-echo " "
-
-echo "Для отображения иконки Pamac в трее нужно будет установить пакет pamac-tray-icon-plasma "
-
-echo " "
-
-# Последний вариант
-
-pacman -Sy plasma kde-system-meta kio-extras konsole yakuake htop dkms --noconfirm
-
-pacman -S alsa-utils ark aspell aspell-en aspell-ru audacious audacious-plugins bat bind bleachbit --noconfirm
-
-pacman -S firefox-i18n-ru dnsmasq dolphin-plugins downgrade fd filelight findutils fzf git --noconfirm
-
-pacman -S gnome-calculator gtk-engine-murrine telegram-desktop gvfs gvfs-afc gvfs-mtp gvfs-gphoto2 --noconfirm
-
-pacman -S gwenview haveged highlight kfind lib32-alsa-plugins lib32-freetype2 lib32-glu lib32-libcurl-gnutls --noconfirm
-
-pacman -S lib32-libpulse lib32-libxft lib32-libxinerama lib32-libxrandr lib32-openal lib32-openssl-1.0 --noconfirm
-
-pacman -S lib32-sdl2_mixer ntfs-3g nano-syntax-highlighting neofetch noto-fonts-emoji okular perl-image-exiftool --noconfirm
-
-pacman -S partitionmanager pcmanfm pkgfile p7zip pulseaudio-alsa --noconfirm
-
-pacman -S pamac-aur qbittorrent plasma5-applets-weather-widget qt5-xmlpatterns systemd-kcm --noconfirm
-
-pacman -S kate smplayer smplayer-themes spectacle terminus-font timeshift --noconfirm
-
-pacman -S ttf-arphic-ukai ttf-arphic-uming ttf-caladea ttf-carlito ttf-croscore ttf-dejavu --noconfirm
-
-pacman -S ttf-liberation ttf-sazanami unrar xclip xorg-xrandr zim yay youtube-dl starship --noconfirm
-
-
-pacman -Rns discover --noconfirm
-
-echo "Для отображения иконки Pamac в трее нужно будет установить пакет pamac-tray-icon-plasma "
-
-wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/arc-kde/master/install.sh | sh
-
 echo "Добавление хука автоматической очистки кэша pacman "
 echo "[Trigger]
 Operation = Remove
@@ -375,13 +327,62 @@ Exec = /usr/bin/paccache -rvk0" >> /usr/share/libalpm/hooks/cleanup.hook
 echo "Хук добавлен "
 clear
 echo " "
+echo " Установка KDE и набора программ "
+echo " "
+
+echo "Для отображения иконки Pamac в трее нужно будет установить пакет pamac-tray-icon-plasma "
+
+echo " "
+
+# Последний вариант
+
+pacman -Sy plasma kde-system-meta kio-extras konsole yakuake htop dkms --noconfirm
+
+pacman -S alsa-utils ark aspell aspell-en aspell-ru audacious audacious-plugins bat bind bleachbit --noconfirm
+
+pacman -S firefox-i18n-ru dolphin-plugins fd filelight findutils fzf git --noconfirm
+
+pacman -S kcalc gtk-engine-murrine telegram-desktop gvfs gvfs-afc gvfs-mtp gvfs-gphoto2 --noconfirm
+
+pacman -S gwenview haveged highlight kfind lib32-alsa-plugins lib32-freetype2 lib32-glu lib32-libcurl-gnutls --noconfirm
+
+pacman -S lib32-libpulse lib32-libxft lib32-libxinerama lib32-libxrandr lib32-openal lib32-openssl-1.0 --noconfirm
+
+pacman -S lib32-sdl2_mixer ntfs-3g nano-syntax-highlighting neofetch noto-fonts-emoji okular perl-image-exiftool --noconfirm
+
+pacman -S partitionmanager pcmanfm pkgfile p7zip --noconfirm
+
+pacman -S pamac-aur qbittorrent plasma5-applets-weather-widget qt5-xmlpatterns --noconfirm
+
+pacman -S kate smplayer smplayer-themes spectacle terminus-font --noconfirm
+
+pacman -S ttf-arphic-ukai ttf-arphic-uming ttf-caladea ttf-carlito ttf-croscore ttf-dejavu --noconfirm
+
+pacman -S ttf-liberation ttf-sazanami unrar xclip xorg-xrandr zim yt-dlp starship --noconfirm
+
+sudo ln -s /usr/bin/yt-dlp /usr/bin/youtube-dl
+
+
+pacman -Rns discover --noconfirm
+
+echo "Добавление репозитория Archlinuxcn"
+echo '[archlinuxcn]' >> /etc/pacman.conf
+echo 'Server = http://repo.archlinuxcn.org/$arch' >> /etc/pacman.conf
+pacman -Sy archlinuxcn-keyring --noconfirm
+clear
+
+sudo pacman -S downgrade yay timeshift systemd-numlockontty ventoy-bin
+
+echo "Для отображения иконки Pamac в трее нужно будет установить пакет pamac-tray-icon-plasma "
+
+wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/arc-kde/master/install.sh | sh
 
 grub-mkfont -s 16 -o /boot/grub/ter-u16b.pf2 /usr/share/fonts/misc/ter-u16b.otb
 grub-mkconfig -o /boot/grub/grub.cfg
 clear
 pacman -S xorg-xinit --noconfirm
 cp /etc/X11/xinit/xinitrc /home/$username/.xinitrc
-chown $username:users /home/$username/.xinitrc
+chown $username:$username /home/$username/.xinitrc
 chmod +x /home/$username/.xinitrc
 echo "exec startplasma-x11 " >> /home/$username/.xinitrc
 echo ' [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx ' >> /etc/profile
@@ -410,7 +411,7 @@ while
     read -n1 -p  "
     1 - установить zsh
     2 - установить fish
-    0 - оставим bash по умолчанию " x_shell
+    0 - оставить bash по умолчанию " x_shell
     echo ''
     [[ "$x_shell" =~ [^120] ]]
 do
@@ -473,7 +474,7 @@ if [[ $vm_text == 0 ]]; then
   exit
 elif [[ $vm_text == 1 ]]; then
   mkdir /home/$username/{Downloads,Music,Pictures,Videos,Documents}
-  chown -R $username:users  /home/$username/{Downloads,Music,Pictures,Videos,Documents}
+  chown -R $username:$username  /home/$username/{Downloads,Music,Pictures,Videos,Documents}
   exit
 fi
 clear
