@@ -309,7 +309,7 @@ echo " Добавление Multilib репозитория"
 echo '[multilib]' >> /etc/pacman.conf
 echo 'Include = /etc/pacman.d/mirrorlist' >> /etc/pacman.conf
 echo " Multilib репозиторий добавлен"
-######
+######https://wiki.archlinux.org/title/Intel_graphics#Installation
 pacman -Sy xorg-server xorg-drivers --noconfirm
 clear
 echo "Добавление хука автоматической очистки кэша pacman "
@@ -329,8 +329,6 @@ clear
 echo " "
 echo " Установка KDE и набора программ "
 echo " "
-
-echo "Для отображения иконки Pamac в трее нужно будет установить пакет pamac-tray-icon-plasma "
 
 echo " "
 
@@ -362,6 +360,13 @@ pacman -S ttf-liberation ttf-sazanami unrar xclip xorg-xrandr zim yt-dlp starshi
 
 sudo ln -s /usr/bin/yt-dlp /usr/bin/youtube-dl
 
+clear
+
+echo "Установка видеодров"
+
+pacman -S mesa lib32-mesa nvidia nvidia-settings intel-media-driver libva-intel-driver --noconfirm
+
+clear
 
 pacman -Rns discover --noconfirm
 
