@@ -205,12 +205,6 @@ When = PostTransaction
 Exec = /usr/bin/paccache -rvk0" >> /usr/share/libalpm/hooks/cleanup.hook
 echo "Хук добавлен "
 clear
-echo " "
-#  echo "Добавление репозитория Archlinuxcn"
-#  echo '[archlinuxcn]' >> /etc/pacman.conf
-#  echo 'Server = http://repo.archlinuxcn.org/$arch' >> /etc/pacman.conf
-#  pacman -Sy archlinuxcn-keyring --noconfirm
- clear
 
 echo " Установка KDE и набора программ "
 
@@ -241,15 +235,11 @@ pacman -S ttf-dejavu ttf-liberation ttf-sazanami unrar xclip xorg-xrandr foliate
 sudo ln -s /usr/bin/yt-dlp /usr/bin/youtube-dl
 
 echo " "
- echo "Добавление репозитория Archlinuxcn"
- echo '[archlinuxcn]' >> /etc/pacman.conf
- echo 'Server = http://repo.archlinuxcn.org/$arch' >> /etc/pacman.conf
- pacman -Sy archlinuxcn-keyring --noconfirm
- clear
-
-# pacman -S fastfetch-git downgrade yay timeshift systemd-numlockontty ventoy-bin --noconfirm
-
-# pacman -S systemd-kcm downgrade duf yay timeshift systemd-numlockontty --noconfirm
+echo "Добавление репозитория Archlinuxcn"
+echo '[archlinuxcn]' >> /etc/pacman.conf
+echo 'Server = http://repo.archlinuxcn.org/$arch' >> /etc/pacman.conf
+pacman -Sy archlinuxcn-keyring --noconfirm
+clear
 
 sudo pacman -S downgrade yay timeshift systemd-numlockontty ventoy-bin
 
@@ -263,15 +253,13 @@ clear
 
 echo " Установка драйверов AMDGPU "
 
-#pacman -S libva-mesa-driver lib32-libva-mesa-driver mesa-vdpau lib32-mesa-vdpau --noconfirm
-#pacman -S lib32-vulkan-icd-loader amdvlk lib32-amdvlk --noconfirm
 pacman -S libva-mesa-driver lib32-libva-mesa-driver mesa-vdpau lib32-mesa-vdpau lib32-vulkan-icd-loader lib32-vulkan-radeon vulkan-radeon --noconfirm
 clear
 
 pacman -Rns bluedevil discover plasma-thunderbolt bolt plasma-firewall --noconfirm
 
 
-#wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/arc-kde/master/install.sh | sh
+wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/arc-kde/master/install.sh | sh
 
 
 grub-mkfont -s 16 -o /boot/grub/ter-u16b.pf2 /usr/share/fonts/misc/ter-u16b.otb
