@@ -362,11 +362,11 @@ sudo ln -s /usr/bin/yt-dlp /usr/bin/youtube-dl
 
 clear
 
-echo "Установка видеодров"
-
-pacman -S mesa lib32-mesa nvidia nvidia-settings intel-media-driver libva-intel-driver --noconfirm
-
-clear
+# echo "Установка видеодров"
+#
+# pacman -S mesa lib32-mesa nvidia nvidia-settings intel-media-driver libva-intel-driver --noconfirm
+#
+# clear
 
 pacman -Rns discover --noconfirm
 
