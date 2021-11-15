@@ -212,7 +212,7 @@ echo " Установка KDE и набора программ "
 
 pacman -Sy plasma kde-system-meta kio-extras konsole yakuake htop dkms --noconfirm
 
-pacman -S arch-install-scripts alsa-utils ark aspell aspell-en aspell-ru audacious bat bind rsync dnsmasq duf --noconfirm
+pacman -S arch-install-scripts alsa-utils ark aspell aspell-en aspell-ru hspell libvoikko hunspell-ru audacious bat bind rsync dnsmasq duf --noconfirm
 
 pacman -S dolphin-plugins grub-btrfs fd filelight findutils meld firefox firefox-i18n-ru fish fisher fzf --noconfirm
 
