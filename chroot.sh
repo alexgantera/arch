@@ -375,7 +375,7 @@ echo 'Server = http://repo.archlinuxcn.org/$arch' >> /etc/pacman.conf
 pacman -Sy archlinuxcn-keyring --noconfirm
 clear
 
-sudo pacman -S downgrade yay timeshift systemd-numlockontty ventoy-bin --noconfirm
+sudo pacman -S downgrade yay timeshift systemd-numlockontty ventoy-bin pamac-aur --noconfirm
 
 echo "Для отображения иконки Pamac в трее нужно будет установить пакет pamac-tray-icon-plasma "
 
