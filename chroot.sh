@@ -164,12 +164,13 @@ echo "ru_RU.UTF-8 UTF-8" >> /etc/locale.gen
 locale-gen
 echo 'LANG="ru_RU.UTF-8"' > /etc/locale.conf
 echo "KEYMAP=ru" >> /etc/vconsole.conf
-echo "FONT=cyr-sun16" >> /etc/vconsole.conf
+echo "FONT=ter-u16b" >> /etc/vconsole.conf
 echo ""
 echo " Укажите пароль для ROOT "
 passwd
 
 echo ""
+groupadd $username
 useradd -m -g $username -G wheel -s /bin/bash $username
 echo ""
 echo 'Добавляем пароль для пользователя '$username' '
@@ -336,37 +337,35 @@ echo " "
 
 pacman -Sy plasma kde-system-meta kio-extras konsole yakuake htop dkms --noconfirm
 
-pacman -S alsa-utils ark aspell aspell-en aspell-ru audacious audacious-plugins bat bind bleachbit --noconfirm
+pacman -S arch-install-scripts alsa-utils ark aspell aspell-en aspell-ru hspell libvoikko hunspell-ru audacious bat bind rsync duf --noconfirm
 
-pacman -S firefox-i18n-ru dolphin-plugins fd filelight findutils fzf git --noconfirm
+pacman -S dolphin-plugins grub-btrfs fd filelight findutils meld firefox firefox-i18n-ru fzf gvfs-afc gvfs-mtp gvfs-gphoto2 --noconfirm
 
-pacman -S kcalc gtk-engine-murrine telegram-desktop gvfs gvfs-afc gvfs-mtp gvfs-gphoto2 --noconfirm
+pacman -S tig git kcalc gtk-engine-murrine gvfs gwenview haveged highlight kfind lib32-alsa-plugins --noconfirm
 
-pacman -S gwenview haveged highlight kfind lib32-alsa-plugins lib32-freetype2 lib32-glu lib32-libcurl-gnutls --noconfirm
+pacman -S lib32-freetype2 lib32-glu lib32-libcurl-gnutls lib32-libpulse lib32-libxft lib32-libxinerama --noconfirm
 
-pacman -S lib32-libpulse lib32-libxft lib32-libxinerama lib32-libxrandr lib32-openal lib32-openssl-1.0 --noconfirm
+pacman -S lib32-libxrandr lib32-openal lib32-openssl-1.0 lib32-sdl2_mixer nano-syntax-highlighting --noconfirm
 
-pacman -S lib32-sdl2_mixer ntfs-3g nano-syntax-highlighting neofetch noto-fonts-emoji okular perl-image-exiftool --noconfirm
+pacman -S noto-fonts-emoji p7zip partitionmanager pcmanfm perl-image-exiftool pkgfile xdg-desktop-portal --noconfirm
 
-pacman -S partitionmanager pcmanfm pkgfile p7zip --noconfirm
+pacman -S plasma5-applets-weather-widget python-pip python-virtualenv python-language-server qbittorrent --noconfirm
 
-pacman -S pamac-aur qbittorrent plasma5-applets-weather-widget qt5-xmlpatterns --noconfirm
+pacman -S kate smplayer smplayer-themes sox spectacle starship telegram-desktop gitui --noconfirm
 
-pacman -S kate smplayer smplayer-themes spectacle terminus-font --noconfirm
+pacman -S terminus-font ttf-arphic-ukai ttf-arphic-uming ttf-caladea ttf-carlito ttf-croscore --noconfirm
 
-pacman -S ttf-arphic-ukai ttf-arphic-uming ttf-caladea ttf-carlito ttf-croscore ttf-dejavu --noconfirm
-
-pacman -S ttf-liberation ttf-sazanami unrar xclip xorg-xrandr zim yt-dlp starship --noconfirm
+pacman -S ttf-dejavu ttf-liberation ttf-sazanami unrar xclip xorg-xrandr foliate xreader yt-dlp zim expac --noconfirm
 
 sudo ln -s /usr/bin/yt-dlp /usr/bin/youtube-dl
 
 clear
 
-# echo "Установка видеодров"
-#
-# pacman -S mesa lib32-mesa nvidia nvidia-settings intel-media-driver libva-intel-driver --noconfirm
-#
-# clear
+echo "Установка видеодров"
+
+pacman -S mesa lib32-mesa nvidia nvidia-settings intel-media-driver libva-intel-driver --noconfirm
+
+clear
 
 pacman -Rns discover --noconfirm
 
@@ -376,7 +375,7 @@ echo 'Server = http://repo.archlinuxcn.org/$arch' >> /etc/pacman.conf
 pacman -Sy archlinuxcn-keyring --noconfirm
 clear
 
-sudo pacman -S downgrade yay timeshift systemd-numlockontty ventoy-bin
+sudo pacman -S downgrade yay timeshift systemd-numlockontty ventoy-bin --noconfirm
 
 echo "Для отображения иконки Pamac в трее нужно будет установить пакет pamac-tray-icon-plasma "
 
