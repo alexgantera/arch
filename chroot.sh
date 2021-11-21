@@ -226,7 +226,7 @@ pacman -S noto-fonts-emoji p7zip partitionmanager pcmanfm perl-image-exiftool pk
 
 pacman -S plasma5-applets-weather-widget python-pip python-virtualenv python-language-server qbittorrent --noconfirm
 
-pacman -S kate smplayer smplayer-themes sox spectacle telegram-desktop gitui qgit --noconfirm
+pacman -S smplayer smplayer-themes sox spectacle telegram-desktop qgit --noconfirm
 
 pacman -S terminus-font ttf-arphic-ukai ttf-arphic-uming ttf-caladea ttf-carlito ttf-croscore --noconfirm
 
@@ -306,7 +306,7 @@ echo "##########################################################################
 echo "###################№   <<<< Копирование настроек >>>    ######################№№№№"
 echo "##################################################################################"
 
-echo " Копируем настройки из /home/$username/system ?"
+echo " Копируем системные настройки?"
 while
     read -n1 -p  "1 - да, 0 - нет: " vm_cpset # sends right after the keypress
     echo ''
@@ -318,11 +318,16 @@ if [[ $vm_cpset == 0 ]]; then
   echo 'этап пропущен'
 elif [[ $vm_cpset == 1 ]]; then
 
+lsblk -o name,mountpoints,label
+echo " "
+read -p "Укажи раздел с настройками:" setting
+mkdir -p /mnt/setprog
+mount -o rw,noatime,compress-force=zstd,discard=async,autodefrag,space_cache=v2,subvol=@home /dev/$setting /mnt/setprog
 rm -r /root
 #rm -r /usr/share/icons
 rm -r /usr/share/sddm
 
-cd /home/$username/system/
+cd /mnt/setprog/system/
 rsync -r -v -a --progress -l etc /
 rsync -r -v -a --progress -l root /
 
@@ -335,6 +340,7 @@ rsync -r -v -a --progress -l nano-syntax-highlighting /usr/share
 rsync -r -v -a --progress -l alsa-card-profile /usr/share
 rsync -r -v -a --progress -l cron /var/spool
 
+umount /dev/$setting
 
 fi
 
