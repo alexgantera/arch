@@ -321,13 +321,13 @@ elif [[ $vm_cpset == 1 ]]; then
 lsblk -o name,mountpoints,label
 echo " "
 read -p "Укажи раздел с настройками:" setting
-mkdir -p /mnt/setprog
-mount -o rw,noatime,compress-force=zstd,discard=async,autodefrag,space_cache=v2,subvol=@home /dev/$setting /mnt/setprog
+mkdir -p /setprog
+mount -o rw,noatime,compress-force=zstd,discard=async,autodefrag,space_cache=v2,subvol=@home /dev/$setting /setprog
 rm -r /root
 #rm -r /usr/share/icons
 rm -r /usr/share/sddm
 
-cd /mnt/setprog/system/
+cd /setprog/system/
 rsync -r -v -a --progress -l etc /
 rsync -r -v -a --progress -l root /
 
@@ -341,6 +341,7 @@ rsync -r -v -a --progress -l alsa-card-profile /usr/share
 rsync -r -v -a --progress -l cron /var/spool
 
 umount /dev/$setting
+rm -rf /setprog
 
 fi
 
