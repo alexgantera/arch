@@ -322,7 +322,7 @@ lsblk -o name,mountpoints,label
 echo " "
 read -p "Укажи раздел с настройками:" setting
 mkdir -p /setprog
-mount -o rw,noatime,compress-force=zstd,discard=async,autodefrag,space_cache=v2,subvol=@home /dev/$setting /setprog
+mount -o rw,noatime,compress-force=zstd,discard=async,autodefrag,space_cache=v2 /dev/$setting /setprog
 rm -r /root
 #rm -r /usr/share/icons
 rm -r /usr/share/sddm

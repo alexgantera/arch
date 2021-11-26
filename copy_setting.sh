@@ -2,6 +2,8 @@
 
 sudo mkdir -p system/icons $dir
 sudo rsync -r -v --progress -l /etc /root system
+sudo chattr -i $dir system/etc/resolv.conf
+
 
 sudo rsync -r -v -a --progress -l /usr/share/icons/My_icons system/icons
 sudo rsync -r -v -a --progress -l /usr/share/icons/default system/icons
