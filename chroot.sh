@@ -318,16 +318,13 @@ if [[ $vm_cpset == 0 ]]; then
   echo 'этап пропущен'
 elif [[ $vm_cpset == 1 ]]; then
 
-lsblk -o name,mountpoints,label
 echo " "
-read -p "Укажи раздел с настройками:" setting
-mkdir -p /setprog
-mount -o rw,noatime,compress-force=zstd,discard=async,autodefrag,space_cache=v2 /dev/$setting /setprog
+
 rm -r /root
 #rm -r /usr/share/icons
 rm -r /usr/share/sddm
 
-cd /setprog/system/
+cd /home/$username/system/
 rsync -r -v -a --progress -l etc /
 rsync -r -v -a --progress -l root /
 
@@ -339,9 +336,6 @@ rsync -r -v -a --progress -l pipewire /usr/share
 rsync -r -v -a --progress -l nano-syntax-highlighting /usr/share
 rsync -r -v -a --progress -l alsa-card-profile /usr/share
 rsync -r -v -a --progress -l cron /var/spool
-
-umount /dev/$setting
-rm -rf /setprog
 
 fi
 
