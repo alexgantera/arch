@@ -216,7 +216,7 @@ pacman -S arch-install-scripts alsa-utils ark aspell aspell-en aspell-ru hspell 
 
 pacman -S dolphin-plugins grub-btrfs fd filelight findutils meld firefox firefox-i18n-ru fish fisher fzf --noconfirm
 
-pacman -S tig git gnome-calculator gtk-engine-murrine gvfs gwenview haveged highlight kfind lib32-alsa-plugins --noconfirm
+pacman -S tig git gtk-engine-murrine gvfs gwenview haveged highlight kfind lib32-alsa-plugins --noconfirm
 
 pacman -S lib32-freetype2 lib32-glu lib32-libcurl-gnutls lib32-libpulse lib32-libxft lib32-libxinerama --noconfirm
 
@@ -226,7 +226,7 @@ pacman -S noto-fonts-emoji p7zip partitionmanager pcmanfm perl-image-exiftool pk
 
 pacman -S plasma5-applets-weather-widget python-pip python-virtualenv python-lsp-server qbittorrent --noconfirm
 
-pacman -S smplayer smplayer-themes sox spectacle telegram-desktop qgit kate --noconfirm
+pacman -S smplayer smplayer-themes sox spectacle telegram-desktop qgit kate kcalc --noconfirm
 
 pacman -S terminus-font ttf-arphic-ukai ttf-arphic-uming ttf-caladea ttf-carlito ttf-croscore --noconfirm
 
