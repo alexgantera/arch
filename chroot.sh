@@ -182,13 +182,13 @@ mkinitcpio -p linux
 echo ""
 ###########
 echo ""
-echo 'ParallelDownloads = 8' >> /etc/pacman.conf
-echo 'ILoveCandy' >> /etc/pacman.conf
 echo ""
 echo " Добавление Multilib репозитория"
 echo '[multilib]' >> /etc/pacman.conf
 echo 'Include = /etc/pacman.d/mirrorlist' >> /etc/pacman.conf
 echo " Multilib репозиторий добавлен"
+echo 'ParallelDownloads = 8' >> /etc/pacman.conf
+echo 'ILoveCandy' >> /etc/pacman.conf
 ######
 pacman -Sy xorg-server xf86-video-amdgpu --noconfirm
 clear
