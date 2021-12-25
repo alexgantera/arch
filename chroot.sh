@@ -324,9 +324,7 @@ rm -r /root
 #rm -r /usr/share/icons
 rm -r /usr/share/sddm
 
-mkdir /Settings
-mount /dev/sdb3 /Settings
-cd /Settings/system/
+cd /home/$username/system/
 
 rsync -r -v -a --progress -l etc /
 rsync -r -v -a --progress -l root /
@@ -340,8 +338,7 @@ rsync -r -v -a --progress -l nano-syntax-highlighting /usr/share
 rsync -r -v -a --progress -l alsa-card-profile /usr/share
 rsync -r -v -a --progress -l cron /var/spool
 
-umount /dev/sdb3
-rm -rf /Settings
+rm -rf cd /home/$username/system/
 
 fi
 
