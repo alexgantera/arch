@@ -341,6 +341,7 @@ rsync -r -v -a --progress -l alsa-card-profile /usr/share
 rsync -r -v -a --progress -l cron /var/spool
 
 umount /dev/sdb3
+rm -rf /Settings
 
 fi
 
