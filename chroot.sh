@@ -226,7 +226,7 @@ pacman -S noto-fonts-emoji p7zip partitionmanager pcmanfm perl-image-exiftool pk
 
 pacman -S plasma5-applets-weather-widget python-pip python-virtualenv python-lsp-server qbittorrent --noconfirm
 
-pacman -S smplayer smplayer-themes sox spectacle telegram-desktop qgit kate kcalc --noconfirm
+pacman -S smplayer smplayer-themes sox spectacle telegram-desktop qgit kate autopep8 flake8 kcalc --noconfirm
 
 pacman -S terminus-font ttf-arphic-ukai ttf-arphic-uming ttf-caladea ttf-carlito ttf-croscore --noconfirm
 
