@@ -75,7 +75,7 @@ btrfs sub cr /mnt/@
 #btrfs subvolume create /mnt/@home
 
 umount /dev/$root
-mount -o rw,noatime,compress-force=zstd,discard=async,autodefrag,space_cache=v2,subvol=@ /dev/$root /mnt
+mount -o rw,noatime,compress=zstd,discard=async,autodefrag,space_cache=v2,subvol=@ /dev/$root /mnt
 mkdir -p /mnt/home
 echo ""
 ##
@@ -126,7 +126,7 @@ done
     mount /dev/$home /mnt/home
     btrfs sub cr /mnt/home/@home
     umount /dev/$home
-    mount -o rw,noatime,compress-force=zstd,discard=async,autodefrag,space_cache=v2,subvol=@home /dev/$home /mnt/home
+    mount -o rw,noatime,compress=zstd,discard=async,autodefrag,space_cache=v2,subvol=@home /dev/$home /mnt/home
    elif [[ $homeF == 0 ]]; then
  lsblk -f
 
@@ -137,12 +137,12 @@ done
  lsblk -f
 
 # read -p "Укажите ROOT раздел(sda/sdb 1.2.3.4 (sda5 например)):" root
-# mount -o rw,noatime,compress-force=zstd,discard=async,autodefrag,space_cache=v2,subvol=@ /dev/$root /mnt
+# mount -o rw,noatime,compress=zstd,discard=async,autodefrag,space_cache=v2,subvol=@ /dev/$root /mnt
 # mkdir -p /mnt/home
-# mount -o noatime,compress-force=zstd,discard=async,autodefrag,space_cache=v2,subvol=@home /dev/$root /mnt/home
+# mount -o noatime,compress=zstd,discard=async,autodefrag,space_cache=v2,subvol=@home /dev/$root /mnt/home
 
  read -p "Укажите HOME раздел(sda/sdb 1.2.3.4 (sda6 например)):" homeV
- mount -o rw,noatime,compress-force=zstd,discard=async,autodefrag,space_cache=v2,subvol=@home /dev/$homeV /mnt/home
+ mount -o rw,noatime,compress=zstd,discard=async,autodefrag,space_cache=v2,subvol=@home /dev/$homeV /mnt/home
 
 # mount /dev/$homeV /mnt/home
 fi

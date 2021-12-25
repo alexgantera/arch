@@ -182,6 +182,8 @@ mkinitcpio -p linux
 echo ""
 ###########
 echo ""
+echo 'ParallelDownloads = 8' >> /etc/pacman.conf
+echo 'ILoveCandy' >> /etc/pacman.conf
 echo ""
 echo " Добавление Multilib репозитория"
 echo '[multilib]' >> /etc/pacman.conf
