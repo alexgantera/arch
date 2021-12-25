@@ -232,7 +232,6 @@ pacman -S terminus-font ttf-arphic-ukai ttf-arphic-uming ttf-caladea ttf-carlito
 
 pacman -S ttf-dejavu ttf-liberation ttf-sazanami unrar xclip xorg-xrandr foliate xreader yt-dlp zim expac --noconfirm
 
-sudo ln -s /usr/bin/yt-dlp /usr/bin/youtube-dl
 
 echo " "
 echo "Добавление репозитория Archlinuxcn"
